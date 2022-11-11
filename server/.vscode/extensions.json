@@ -1,0 +1,8 @@
+{
+  "recommendations": [
+    "usernamehw.errorlens",
+    "dbaeumer.vscode-eslint",
+    "streetsidesoftware.code-spell-checker",
+    "esbenp.prettier-vscode"
+  ]
+}
