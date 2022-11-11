@@ -1,20 +1,70 @@
-# Bienvenido a CALMÉCAC
+# CALMECAC
 
-Somos una plataforma de educación que mediante el uso de la tecnología WEB 3.0 requiere el pago de una cuota para acceder a los cursos que ofrecemos
+We are an educational platform that through the use of WEB 3.0 technology requires the payment of a fee to access the courses we offer.
 
----
+### Inspiration
 
-## Qué es Calmécac?
+We are a Dapp that allows students to delegate capital for their studies, at the end of their course, they get 100% of their money back, making education much more accessible to certain social groups.
 
-### Introducción
-Somo una DAPP que permite a los estudiantes delegar capital para sus estudios, al concluir su curso, el 100% de su dinero es devuelto, volviendo la educación muchos mas accesible para determinados grupos sociales.
+### What it does
 
-### Objetivo
-Facilitar a estudiantes de toda America Latina el acceso a educación sin la necesidad de perder su capital invertido.
-Fomentar las nuevas economías propuestas por la tecnología Web 3.0 Convertirnos en una DAPP play to help.
+Facilitate access to education for students from all over Latin America without the need to lose their invested capital.
+Encourage the new economies proposed by Web 3.0 technology Become a DAPP work to help.
 
-### Background
-Según datos de la UNESCO en los ultimos tres años 100 millones de estudiantes dejaron la escuela.La educación esta supedita al contexto de los países dando como resultado una inquietud educativa.
-Con mejores ofertas educativas tienes mejores prospectos de empleo, mejores salarios y por ende mejor estilo de vida.
+### Challenges we ran into
 
-Con esto en mente. se propone un programa de delegación de capital donde el estudiante en ningún momento pierde su inversión y puede continuar con sus estudios.
+According to UNESCO data, in the last three years 100 million students dropped out of school, and education is subject to the context of the countries resulting in an educational restlessness. With better educational offerings you have better job prospects, better salaries and therefore a better lifestyle.
+
+With this in mind, we propose a capital delegation program where the student at no time loses his investment and can continue with his studies.
+
+### Accomplishments that we're proud of
+
+We're proud to have created the real-time connection of the Dapp, creating the smart contracts of the platform and the base architecture of the project; front-end, back-end and the smart contracts development using Hardhat.
+
+### What we learned
+
+We learned about Blockchain, Smart Contracts (continue..)
+
+### What's next for CALMECAC
+
+(- add nexts contributions or proccess about applications..)
+
+### Intructions to run the projects
+
+- FrontEnd
+```bash
+
+cd app (continue...)
+
+```
+- BackEnd:
+```bash
+
+cd server (continue...)
+
+```
+- Blockchain:
+```bash
+
+cd smartcontracts (continue...)
+
+```
+### Contributing ✨
+
+When contributing to this repository, please first discuss the change you wish to make via issue, email, or any other method with the owners of this repository before making a change.
+Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated ❤️
+You can learn more about how you can contribute to this project in the [contribution guide](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/setting-guidelines-for-repository-contributors).
+
+### Supporting 🍺
+
+I believe in Unicorns 🦄 Support me, if you do too.
+
+Donate ETHER, BTC, BNB, USDT, AVAX :
+
+Wallet address: (organization address here)
+
+Please let us know your contributions! 🙏🏻
+
+### Happy Coding 💯
+
+Made with ❤️
