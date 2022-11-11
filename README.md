@@ -25,7 +25,7 @@ We're proud to have created the real-time connection of the `Dapp`, creating the
 
 We learned about Blockchain, Smart Contracts (continue..)
 
-## What's next for CALMECAC
+## What's next for Calmecac
 
 (add nexts contributions or proccess about applications..)
 
