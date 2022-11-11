@@ -1,10 +1,10 @@
 # Calmecac 🤓💻
 
-`Calmecac` is an educational platform that through the use of Web 3.0 technology requires the payment of a fee to access the courses we offer.
+`Calmecac` is an educational platform that through the use of `Web 3.0` technology requires the payment of a fee to access the courses we offer.
 
 ## Inspiration
 
-We are a Dapp that allows students to delegate capital for their studies, at the end of their course, they get 100% of their money back, making `education` much more accessible to certain social groups.
+We are a `Dapp` that allows `students` to delegate capital for their studies, at the end of their course, they get 100% of their money back, making `education` much more accessible to certain `social groups`.
 
 ## What it does
 
