@@ -1,0 +1,30 @@
+{
+  "name": "smartcontracts",
+  "version": "1.0.0",
+  "description": "Calmecac",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npx hardhat test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SxVx/calmecac.git"
+  },
+  "author": "luis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SxVx/calmecac/issues"
+  },
+  "homepage": "https://github.com/SxVx/calmecac#readme",
+  "devDependencies": {
+    "hardhat": "^2.12.2"
+  },
+  "dependencies": {
+    "@nomiclabs/hardhat-ethers": "^2.2.1",
+    "@nomiclabs/hardhat-waffle": "^2.0.3",
+    "dotenv": "^16.0.3"
+  }
+}
