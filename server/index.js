@@ -14,27 +14,20 @@ io.on('connection', () => {
   /*...*/
 });
 
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use('/', route);
 
 app.use((err, req, res, next) => {
   if (httpErrors.isHttpError(err)) {
-    res.status(404).json({
+    res.status(err.statusCode).json({
       success: false,
       message: err.message,
       errors: err.errors || '',
     });
     return;
   }
-  // if (err instanceof multer.MulterError) {
-  //   res.status(statusCode.UNPROCESSABLE_ENTITY).json({
-  //     success: false,
-  //     message: err.message,
-  //     errors: err.field || '',
-  //   })
-  //   return
-  // }
   next();
 });
 

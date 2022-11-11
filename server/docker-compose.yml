@@ -1,0 +1,34 @@
+# Dockerfile for development
+version: '3'
+services:
+  calmecac-mysql:
+    image: mysql/mysql-server:latest
+    container_name: calmecac-mysql
+    ports:
+      - '3306:3306'
+      - '33060:33060'
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=calmecac
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=root
+    volumes:
+      - './my.cnf:/etc/my.cnf'
+    restart: always
+    command:
+      - --default-authentication-plugin=mysql_native_password
+    networks:
+      - calmecac-mysql-server
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    ports:
+      - 8080:80
+    environment:
+      - PMA_ARBITRARY=1
+    restart: unless-stopped
+    networks:
+      - calmecac-mysql-server
+networks:
+  calmecac-mysql-server:
+    driver: bridge
