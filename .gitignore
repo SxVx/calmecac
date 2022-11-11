@@ -1,10 +1,10 @@
+# vscode
+.vscode
+
 # dependencies
 /node_modules
 /.pnp
 .pnp.js
-
-#vscode
-.vscode
 
 # testing
 /coverage

@@ -1,19 +1,19 @@
-# CALMECAC 🤓💻
+# Calmecac 🤓💻
 
-We are an educational platform that through the use of Web 3.0 technology requires the payment of a fee to access the courses we offer.
+`Calmecac` is an educational platform that through the use of Web 3.0 technology requires the payment of a fee to access the courses we offer.
 
 ## Inspiration
 
-We are a Dapp that allows students to delegate capital for their studies, at the end of their course, they get 100% of their money back, making education much more accessible to certain social groups.
+We are a Dapp that allows students to delegate capital for their studies, at the end of their course, they get 100% of their money back, making `education` much more accessible to certain social groups.
 
 ## What it does
 
-Facilitate access to education for students from all over Latin America without the need to lose their invested capital.
+Facilitate access to `education` for `students` from all over Latin America without the need to lose their invested capital.
 Encourage the new economies proposed by `Web 3.0` technology Become a `Dapp` work to help.
 
 ## Challenges we ran into
 
-According to UNESCO data, in the last three years 100 million students dropped out of school, and education is subject to the context of the countries resulting in an educational restlessness. With better educational offerings you have better job prospects, better salaries and therefore a better lifestyle.
+According to UNESCO data, in the `last three years 100 million students dropped out of school`, and education is subject to the context of the countries resulting in an educational restlessness. With better educational offerings you have better job prospects, better salaries and therefore a better lifestyle.
 
 With this in mind, we propose a capital delegation program where the student at no time loses his investment and can continue with his studies.
 
