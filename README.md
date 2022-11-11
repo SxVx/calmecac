@@ -52,7 +52,7 @@ cd smartcontracts (continue...)
 ## Contributing ✨
 
 When contributing to this repository, please first discuss the change you wish to make via issue, email or any other method with the owners of this repository before making a change.
-Contributions are what make the open-source community such an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated❤️
+Contributions are what make the open-source community such an amazing place to learn, inspire and create. Any contributions you make are greatly appreciated
 
 You can learn more about how you can contribute to this project in the [contribution guide](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/setting-guidelines-for-repository-contributors).
 
