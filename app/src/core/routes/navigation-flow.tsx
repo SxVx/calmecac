@@ -1,8 +1,8 @@
-import useAuth from '@core/utils/hooks/useAuth';
+import useAuth from '@core/shared/hooks/useAuth';
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MainNavigation from './tab-navigation';
-import Login from '@core/screens/login';
+import Login from '@screens/login';
 
 const { Navigator, Screen } = createNativeStackNavigator();
 

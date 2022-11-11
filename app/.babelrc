@@ -16,7 +16,8 @@
           ".json"
         ],
         "alias": {
-          "@core": "./src/core"
+          "@core": "./src/core",
+          "@screens": "./src/screens"
         }
       }
     ]

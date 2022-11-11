@@ -8,17 +8,30 @@
  * @format
  */
 
-import NavigationFlow from '@core/routes/navigatiion-flow';
+import NavigationFlow from '@core/routes/navigation-flow';
+import theme from '@core/theme';
 import AuthProvider from '@core/utils/providers/auth-provider';
 import { NavigationContainer } from '@react-navigation/native';
-import React, { type PropsWithChildren } from 'react';
+import React from 'react';
+import { ThemeProvider } from 'styled-components/native';
 
-const AppProvider = ({ children }) => <AuthProvider>{children}</AuthProvider>;
+const AppProvider = ({ children }) => (
+  <ThemeProvider theme={theme}>
+    <AuthProvider>{children}</AuthProvider>
+  </ThemeProvider>
+);
 
 const App = () => {
   return (
     <AppProvider>
-      <NavigationContainer>
+      <NavigationContainer
+        theme={{
+          // @ts-ignore
+          colors: {
+            background: theme.colors.background.primary,
+          },
+        }}
+      >
         <NavigationFlow />
       </NavigationContainer>
     </AppProvider>
