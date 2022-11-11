@@ -1,4 +1,4 @@
-# CALMECAC
+# CALMECAC 🤓💻
 
 We are an educational platform that through the use of Web 3.0 technology requires the payment of a fee to access the courses we offer.
 
