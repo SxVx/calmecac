@@ -3,33 +3,22 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('User', {
+    await queryInterface.createTable('UserCourse', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.BIGINT,
       },
-      username: {
-        allowNull: true,
-        type: Sequelize.STRING(30),
+
+      user_id: {
+        allowNull: false,
+        type: Sequelize.BIGINT,
       },
-      email: {
-        allowNull: true,
-        type: Sequelize.STRING,
-        unique: true,
-      },
-      password: {
-        allowNull: true,
-        type: Sequelize.STRING,
-      },
-      role: {
-        allowNull: true,
-        type: Sequelize.STRING(10),
-      },
-      wallet_hash: {
-        allowNull: true,
-        type: Sequelize.TEXT,
+
+      course_id: {
+        allowNull: false,
+        type: Sequelize.BIGINT,
       },
 
       created_at: {
@@ -47,8 +36,27 @@ module.exports = {
         type: Sequelize.DATE,
       },
     });
+
+    // Foreign Keys
+    await queryInterface.addConstraint('UserCourse', {
+      type: 'FOREIGN KEY',
+      fields: ['user_id'],
+      references: {
+        table: 'User',
+        field: 'id',
+      },
+    });
+
+    await queryInterface.addConstraint('UserCourse', {
+      type: 'FOREIGN KEY',
+      fields: ['course_id'],
+      references: {
+        table: 'Course',
+        field: 'id',
+      },
+    });
   },
   down: async (queryInterface) => {
-    await queryInterface.dropTable('User');
+    await queryInterface.dropTable('UserCourse');
   },
 };

@@ -3,35 +3,21 @@
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('User', {
+    await queryInterface.createTable('certificate', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.BIGINT,
       },
-      username: {
-        allowNull: true,
-        type: Sequelize.STRING(30),
-      },
-      email: {
-        allowNull: true,
-        type: Sequelize.STRING,
-        unique: true,
-      },
-      password: {
-        allowNull: true,
-        type: Sequelize.STRING,
-      },
-      role: {
-        allowNull: true,
-        type: Sequelize.STRING(10),
-      },
-      wallet_hash: {
+      address_hash: {
         allowNull: true,
         type: Sequelize.TEXT,
       },
-
+      url_image: {
+        allowNull: true,
+        type: Sequelize.TEXT,
+      },
       created_at: {
         allowNull: true,
         type: Sequelize.DATE,
@@ -49,6 +35,6 @@ module.exports = {
     });
   },
   down: async (queryInterface) => {
-    await queryInterface.dropTable('User');
+    await queryInterface.dropTable('certificate');
   },
 };

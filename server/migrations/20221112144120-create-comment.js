@@ -1,35 +1,31 @@
 'use strict';
-
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('User', {
+    await queryInterface.createTable('Comment', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.BIGINT,
       },
-      username: {
+
+      video_id: {
         allowNull: true,
-        type: Sequelize.STRING(30),
+        type: Sequelize.BIGINT,
       },
-      email: {
-        allowNull: true,
-        type: Sequelize.STRING,
-        unique: true,
-      },
-      password: {
-        allowNull: true,
-        type: Sequelize.STRING,
-      },
-      role: {
-        allowNull: true,
-        type: Sequelize.STRING(10),
-      },
-      wallet_hash: {
+      comment: {
         allowNull: true,
         type: Sequelize.TEXT,
+      },
+      comment_id: {
+        allowNull: true,
+        type: Sequelize.BIGINT,
+        comment: 'main comment reference',
+      },
+      user_id: {
+        allowNull: true,
+        type: Sequelize.BIGINT,
       },
 
       created_at: {
@@ -47,8 +43,26 @@ module.exports = {
         type: Sequelize.DATE,
       },
     });
+
+    // Foreign Keys
+    await queryInterface.addConstraint('Comment', {
+      type: 'FOREIGN KEY',
+      fields: ['video_id'],
+      references: {
+        table: 'Video',
+        field: 'id',
+      },
+    });
+    await queryInterface.addConstraint('Comment', {
+      type: 'FOREIGN KEY',
+      fields: ['user_id'],
+      references: {
+        table: 'User',
+        field: 'id',
+      },
+    });
   },
   down: async (queryInterface) => {
-    await queryInterface.dropTable('User');
+    await queryInterface.dropTable('Comment');
   },
 };

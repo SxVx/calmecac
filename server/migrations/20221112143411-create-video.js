@@ -1,35 +1,23 @@
 'use strict';
-
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('User', {
+    await queryInterface.createTable('Video', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.BIGINT,
       },
-      username: {
-        allowNull: true,
-        type: Sequelize.STRING(30),
-      },
-      email: {
-        allowNull: true,
-        type: Sequelize.STRING,
-        unique: true,
-      },
-      password: {
-        allowNull: true,
-        type: Sequelize.STRING,
-      },
-      role: {
-        allowNull: true,
-        type: Sequelize.STRING(10),
-      },
-      wallet_hash: {
+
+      content_url: {
         allowNull: true,
         type: Sequelize.TEXT,
+      },
+
+      course_id: {
+        allowNull: true,
+        type: Sequelize.BIGINT,
       },
 
       created_at: {
@@ -47,8 +35,18 @@ module.exports = {
         type: Sequelize.DATE,
       },
     });
+
+    // Foreign Keys
+    await queryInterface.addConstraint('Video', {
+      type: 'FOREIGN KEY',
+      fields: ['course_id'],
+      references: {
+        table: 'Course',
+        field: 'id',
+      },
+    });
   },
   down: async (queryInterface) => {
-    await queryInterface.dropTable('User');
+    await queryInterface.dropTable('Video');
   },
 };

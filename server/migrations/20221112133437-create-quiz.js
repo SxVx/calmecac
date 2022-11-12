@@ -1,35 +1,21 @@
 'use strict';
-
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('User', {
+    await queryInterface.createTable('Quiz', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.BIGINT,
       },
-      username: {
+      course_id: {
         allowNull: true,
-        type: Sequelize.STRING(30),
+        type: Sequelize.BIGINT,
       },
-      email: {
+      minimum_questions_favor: {
         allowNull: true,
-        type: Sequelize.STRING,
-        unique: true,
-      },
-      password: {
-        allowNull: true,
-        type: Sequelize.STRING,
-      },
-      role: {
-        allowNull: true,
-        type: Sequelize.STRING(10),
-      },
-      wallet_hash: {
-        allowNull: true,
-        type: Sequelize.TEXT,
+        type: Sequelize.INTEGER,
       },
 
       created_at: {
@@ -47,8 +33,18 @@ module.exports = {
         type: Sequelize.DATE,
       },
     });
+
+    // Foreign Keys
+    await queryInterface.addConstraint('Quiz', {
+      type: 'FOREIGN KEY',
+      fields: ['course_id'],
+      references: {
+        table: 'Course',
+        field: 'id',
+      },
+    });
   },
   down: async (queryInterface) => {
-    await queryInterface.dropTable('User');
+    await queryInterface.dropTable('Quiz');
   },
 };

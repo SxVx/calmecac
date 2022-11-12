@@ -1,35 +1,27 @@
 'use strict';
-
+// Table many to many:  UserVideo
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('User', {
+    await queryInterface.createTable('View', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.BIGINT,
       },
-      username: {
+
+      user_id: {
         allowNull: true,
-        type: Sequelize.STRING(30),
+        type: Sequelize.BIGINT,
       },
-      email: {
+      video_id: {
         allowNull: true,
-        type: Sequelize.STRING,
-        unique: true,
+        type: Sequelize.BIGINT,
       },
-      password: {
-        allowNull: true,
-        type: Sequelize.STRING,
-      },
-      role: {
-        allowNull: true,
-        type: Sequelize.STRING(10),
-      },
-      wallet_hash: {
-        allowNull: true,
-        type: Sequelize.TEXT,
+      view: {
+        defaultValue: true,
+        type: Sequelize.BOOLEAN,
       },
 
       created_at: {
@@ -47,8 +39,26 @@ module.exports = {
         type: Sequelize.DATE,
       },
     });
+
+    // Foreign Keys
+    await queryInterface.addConstraint('View', {
+      type: 'FOREIGN KEY',
+      fields: ['video_id'],
+      references: {
+        table: 'Video',
+        field: 'id',
+      },
+    });
+    await queryInterface.addConstraint('View', {
+      type: 'FOREIGN KEY',
+      fields: ['user_id'],
+      references: {
+        table: 'User',
+        field: 'id',
+      },
+    });
   },
   down: async (queryInterface) => {
-    await queryInterface.dropTable('User');
+    await queryInterface.dropTable('View');
   },
 };

@@ -1,35 +1,21 @@
 'use strict';
-
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.createTable('User', {
+    await queryInterface.createTable('UserCategory', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.BIGINT,
       },
-      username: {
+      user_id: {
         allowNull: true,
-        type: Sequelize.STRING(30),
+        type: Sequelize.BIGINT,
       },
-      email: {
+      category_id: {
         allowNull: true,
-        type: Sequelize.STRING,
-        unique: true,
-      },
-      password: {
-        allowNull: true,
-        type: Sequelize.STRING,
-      },
-      role: {
-        allowNull: true,
-        type: Sequelize.STRING(10),
-      },
-      wallet_hash: {
-        allowNull: true,
-        type: Sequelize.TEXT,
+        type: Sequelize.BIGINT,
       },
 
       created_at: {
@@ -47,8 +33,26 @@ module.exports = {
         type: Sequelize.DATE,
       },
     });
+
+    // Foreign Keys
+    await queryInterface.addConstraint('UserCategory', {
+      type: 'FOREIGN KEY',
+      fields: ['user_id'],
+      references: {
+        table: 'User',
+        field: 'id',
+      },
+    });
+    await queryInterface.addConstraint('UserCategory', {
+      type: 'FOREIGN KEY',
+      fields: ['category_id'],
+      references: {
+        table: 'Category',
+        field: 'id',
+      },
+    });
   },
   down: async (queryInterface) => {
-    await queryInterface.dropTable('User');
+    await queryInterface.dropTable('UserCategory');
   },
 };
