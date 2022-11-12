@@ -8,6 +8,7 @@ module.exports = {
     host: DB_HOST,
     dialect: 'mysql',
     secret: '',
+    logging: false,
   },
   production: {
     username: DB_USERNAME,
@@ -16,5 +17,6 @@ module.exports = {
     host: DB_HOST,
     port: DB_PORT,
     dialect: 'mysql',
+    logging: false,
   },
 };
