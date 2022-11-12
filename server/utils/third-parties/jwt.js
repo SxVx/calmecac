@@ -21,12 +21,13 @@ module.exports = {
     if (!bearerHeader) return next(createError.Unauthorized('Access token is required'));
 
     const token = bearerHeader.split(' ')[1];
-    jwt.verify(token, SECRET_KEY, (error, authData) => {
+    const dataUser = jwt.verify(token, SECRET_KEY, (error, authData) => {
       if (error) return next(createError.Unauthorized('UNAUTHORIZED TOKEN'));
       return authData;
     });
 
     req.token = token;
+    req.USER_LOGGED = dataUser;
     next();
   },
 };

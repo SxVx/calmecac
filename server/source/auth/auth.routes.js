@@ -12,22 +12,27 @@ router.post('/login', async (req, res, next) => {
   }
 });
 
+/**
+ * ToDO:
+ * Remove test code and implement correct login
+ */
 const { User } = require('../../models');
 const { generateToken, verifyToken } = require('../../utils/third-parties/jwt');
 
+// ToDo: Test code
 router.post('/x1', async (req, res, next) => {
   try {
-    const user = await User.findOne();
+    const user = await User.findOne({ where: { id: 3 } });
     const token = await generateToken({ id: user.id });
     res.json({ token });
   } catch (error) {
     next(createError(HTTP_CODE.INTERNAL_SERVER_ERROR, error));
   }
 });
-
+// ToDo: Test code
 router.post('/x2', verifyToken, async (req, res, next) => {
   try {
-    res.json({ message: 'ITS WORK' });
+    res.json({ message: 'ITS WORK', dataUser: req.USER_LOGGED });
   } catch (error) {
     next(createError(HTTP_CODE.INTERNAL_SERVER_ERROR, error));
   }
