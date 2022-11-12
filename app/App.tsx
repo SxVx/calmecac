@@ -19,6 +19,14 @@ import { ThemeProvider } from 'styled-components/native';
 
 import '@core/config/shim';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { LogBox } from 'react-native';
+
+if (__DEV__) {
+  import('@core/config/reactotron').then(() =>
+    console.log('Reactotron Configured!'),
+  );
+  LogBox.ignoreLogs([/Could not find Fiber with id "\d+"/]);
+}
 
 const AppProvider = ({ children }) => (
   <ThemeProvider theme={theme}>
@@ -26,6 +34,14 @@ const AppProvider = ({ children }) => (
       storageOptions={{
         asyncStorage: AsyncStorage,
       }}
+      clientMeta={{
+        description: 'Connect to Calmecac',
+        url: 'https://walletconnect.org',
+        icons: ['https://walletconnect.org/walletconnect-logo.png'],
+        name: 'Calmecac',
+      }}
+      redirectUrl="calmecac://"
+      bridge="https://bridge.walletconnect.org"
     >
       <AuthProvider>{children}</AuthProvider>
     </WalletConnectProvider>

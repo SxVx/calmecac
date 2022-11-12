@@ -28,6 +28,12 @@ buildscript {
     }
 }
 
+subprojects { subproject ->
+    if (project['name'] == 'react-native-check-app-install') {
+        project.configurations { compile { } }
+    }
+}
+
 allprojects {
     repositories {
         maven {
