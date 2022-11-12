@@ -1,0 +1,35 @@
+diff --git a/node_modules/@walletconnect/react-native-dapp/dist/constants/defaultRenderQrcodeModal.js b/node_modules/@walletconnect/react-native-dapp/dist/constants/defaultRenderQrcodeModal.js
+index da0e873..fe81e18 100644
+--- a/node_modules/@walletconnect/react-native-dapp/dist/constants/defaultRenderQrcodeModal.js
++++ b/node_modules/@walletconnect/react-native-dapp/dist/constants/defaultRenderQrcodeModal.js
+@@ -1,4 +1,4 @@
+ import * as React from 'react';
+ import { QrcodeModal } from '../components';
+-const defaultRenderQrcodeModal = (props) => React.createElement(QrcodeModal, { ...props, division: 4 });
++const defaultRenderQrcodeModal = (props) => React.createElement(QrcodeModal, { ...props, division: 5 });
+ export default defaultRenderQrcodeModal;
+diff --git a/node_modules/@walletconnect/react-native-dapp/dist/providers/WalletConnectProvider.js b/node_modules/@walletconnect/react-native-dapp/dist/providers/WalletConnectProvider.js
+index 9b5b1e2..ada39c8 100644
+--- a/node_modules/@walletconnect/react-native-dapp/dist/providers/WalletConnectProvider.js
++++ b/node_modules/@walletconnect/react-native-dapp/dist/providers/WalletConnectProvider.js
+@@ -20,6 +20,7 @@ export default function WalletConnectProvider({ children, renderQrcodeModal: may
+         ? maybeRenderQrcodeModal
+         : defaultRenderQrcodeModal), [maybeRenderQrcodeModal]);
+     const open = React.useCallback(async (uri, cb) => {
++
+         if (Platform.OS === 'android') {
+             const canOpenURL = await Linking.canOpenURL(uri);
+             if (!canOpenURL) {
+@@ -218,7 +219,9 @@ export default function WalletConnectProvider({ children, renderQrcodeModal: may
+         walletServices,
+         walletServicesError,
+     ]);
+-    return (React.createElement(WalletConnectContext.Provider, { value: value },
+-        !!children && children,
+-        Platform.OS !== 'android' && renderQrcodeModal(modalProps)));
++    return (
++        <WalletConnectContext.Provider value={value}>
++            {!!children && children}
++        </WalletConnectContext.Provider>
++    );
+ }

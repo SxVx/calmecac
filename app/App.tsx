@@ -40,8 +40,9 @@ const AppProvider = ({ children }) => (
         icons: ['https://walletconnect.org/walletconnect-logo.png'],
         name: 'Calmecac',
       }}
-      redirectUrl="calmecac://"
       bridge="https://bridge.walletconnect.org"
+      redirectUrl="https://walletconnect.org/walletconnect-qrcode.html"
+      storageId="@walletconnect"
     >
       <AuthProvider>{children}</AuthProvider>
     </WalletConnectProvider>

@@ -11,7 +11,7 @@ const Login = () => {
   const connection = useWalletConnect();
 
   const onLogin = async () => {
-    await connection?.createSession?.();
+    await connection?.connect?.();
   };
 
   return (
