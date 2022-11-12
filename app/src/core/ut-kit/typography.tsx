@@ -19,8 +19,7 @@ const Typography = (props: Props) => (
 export default Typography;
 
 const StyledText = styled.Text<Omit<Props, 'children'>>`
-  font-family: ${({ theme, variant = 'medium' }) =>
-    theme.typography[variant].fontFamily};
+  font-family: ${({ theme, variant = 'medium' }) => theme.fontFamily};
   ${({ align = 'auto' }) => `text-align: ${align}`}
   color: ${({ theme }) => theme.colors.font.primary};
 `;
