@@ -1,8 +1,11 @@
 import useAuth from '@core/shared/hooks/useAuth';
+import Typography from '@core/ut-kit/typography';
 import { Button } from '@rneui/base';
 import { useWalletConnect } from '@walletconnect/react-native-dapp';
 import React from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
+
+import parseWallet from './utils/parseWallet';
 
 const Home = () => {
   const connection = useWalletConnect();
@@ -15,8 +18,9 @@ const Home = () => {
 
   return (
     <View>
-      <Text>Hello</Text>
-      {connected && <Button onPress={onLogout}>Disconnect</Button>}
+      <Typography>Wallet: {parseWallet(connection?.accounts?.[0])}</Typography>
+
+      {connected && <Button onPress={onLogout}>Disconnect wallet</Button>}
     </View>
   );
 };

@@ -1,25 +1,29 @@
 import Typography from '@core/ut-kit/typography';
 import React from 'react';
-import { Image, Linking, StatusBar, Text, View } from 'react-native';
+import {
+  Image,
+  Linking,
+  StatusBar,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import styled, { useTheme } from 'styled-components/native';
 import { Button } from '@rneui/themed';
 import { useWalletConnect } from '@walletconnect/react-native-dapp';
 
 import MetamaskIcon from '@core/assets/images/metamask.svg';
+import Video from 'react-native-video';
 
 const Login = () => {
   const theme = useTheme();
   const connection = useWalletConnect();
 
   const onLogin = async () => {
-    await connection?.connect?.();
-  };
-
-  const onSetBinance = async () => {
-    const deepLink = 'metamask://SettingsFlow/NetworksSettings/';
-
-    if (await Linking.canOpenURL(deepLink)) {
-      await Linking.openURL(deepLink);
+    try {
+      await connection?.connect?.();
+    } catch (error) {
+      console.warn(error);
     }
   };
 
@@ -28,6 +32,14 @@ const Login = () => {
       <StatusBar translucent backgroundColor={theme.colors.primary} />
 
       <Container>
+        <StyledVideo
+          source={{
+            uri: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+          }}
+          resizeMode="cover"
+          repeat
+          volume={0.0}
+        />
         <Typography>Welcome to Calmecac</Typography>
         <Typography align="center">
           Your Web3 learning platform to become a professional!
@@ -40,17 +52,7 @@ const Login = () => {
           radius={10}
           iconPosition="left"
         >
-          <Typography>Log in with Metamask</Typography>
-        </Button>
-        <Button
-          onPress={onSetBinance}
-          icon={<MetamaskIcon height={25} width={25} />}
-          type="outline"
-          raised={false}
-          radius={10}
-          iconPosition="left"
-        >
-          <Typography>Set up Binance test network</Typography>
+          <Typography>Connect with Metamask</Typography>
         </Button>
       </Container>
     </>
@@ -67,4 +69,9 @@ const Container = styled.View`
   `}
   justify-content: center;
   align-items: center;
+`;
+
+const StyledVideo = styled(Video)`
+  ${StyleSheet.absoluteFill}
+  z-index: -1;
 `;
