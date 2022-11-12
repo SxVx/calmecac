@@ -42,8 +42,6 @@ const AuthProvider = ({ children }: React.PropsWithChildren) => {
     try {
       const result = await connection?.connect?.();
 
-      console.log(result);
-
       authReducer({
         type: TYPE.SIGN_IN,
         payload: {

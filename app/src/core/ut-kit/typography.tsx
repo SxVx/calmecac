@@ -22,4 +22,6 @@ const StyledText = styled.Text<Omit<Props, 'children'>>`
   font-family: ${({ theme, variant = 'medium' }) => theme.fontFamily};
   ${({ align = 'auto' }) => `text-align: ${align}`}
   color: ${({ theme }) => theme.colors.font.primary};
+  ${({ theme, variant = 'small' }) => theme.typography[variant]}
+  ${({ theme, ...rest }) => theme.utils.getMargin(rest)}
 `;

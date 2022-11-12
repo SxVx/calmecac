@@ -37,6 +37,7 @@
     "path-browserify": "^1.0.1",
     "punycode": "^1.2.4",
     "react": "18.1.0",
+    "react-error-boundary": "^3.1.4",
     "react-native": "0.70.5",
     "react-native-check-app-install": "^0.0.5",
     "react-native-config": "^1.4.11",
@@ -101,6 +102,7 @@
   "devDependencies": {
     "@babel/core": "^7.12.9",
     "@babel/runtime": "^7.12.5",
+    "@faker-js/faker": "^7.6.0",
     "@react-native-community/eslint-config": "^2.0.0",
     "@tsconfig/react-native": "^2.0.2",
     "@types/jest": "^26.0.23",

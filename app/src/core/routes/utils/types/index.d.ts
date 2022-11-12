@@ -1,4 +1,5 @@
 export type RootStackParamList = {
-  Root: undefined;
+  Home: undefined;
   Login: undefined;
+  Course: Record<string, Record<string, string>>;
 };

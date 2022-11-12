@@ -8,16 +8,18 @@ import {
   Text,
   View,
 } from 'react-native';
-import styled, { useTheme } from 'styled-components/native';
+import styled from 'styled-components/native';
 import { Button } from '@rneui/themed';
 import { useWalletConnect } from '@walletconnect/react-native-dapp';
 
 import MetamaskIcon from '@core/assets/images/metamask.svg';
 import Video from 'react-native-video';
+import { useFocusEffect } from '@react-navigation/native';
+import theme from '@core/theme';
 
 const Login = () => {
-  const theme = useTheme();
   const connection = useWalletConnect();
+  const [volume, setVolume] = React.useState(0);
 
   const onLogin = async () => {
     try {
@@ -27,19 +29,17 @@ const Login = () => {
     }
   };
 
+  useFocusEffect(
+    React.useCallback(() => {
+      setVolume(0);
+    }, []),
+  );
+
   return (
     <>
       <StatusBar translucent backgroundColor={theme.colors.primary} />
 
       <Container>
-        <StyledVideo
-          source={{
-            uri: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
-          }}
-          resizeMode="cover"
-          repeat
-          volume={0.0}
-        />
         <Typography>Welcome to Calmecac</Typography>
         <Typography align="center">
           Your Web3 learning platform to become a professional!
@@ -47,10 +47,11 @@ const Login = () => {
         <Button
           onPress={onLogin}
           icon={<MetamaskIcon height={25} width={25} />}
-          type="outline"
           raised={false}
           radius={10}
           iconPosition="left"
+          buttonStyle={styles.buttonStyle}
+          type="outline"
         >
           <Typography>Connect with Metamask</Typography>
         </Button>
@@ -75,3 +76,10 @@ const StyledVideo = styled(Video)`
   ${StyleSheet.absoluteFill}
   z-index: -1;
 `;
+
+const styles = StyleSheet.create({
+  buttonStyle: {
+    backgroundColor: theme.colors.secondary,
+    borderColor: theme.colors.secondary,
+  },
+});

@@ -11,7 +11,7 @@ declare global {
   type SpacingValues = 'X' | 'Y' | 'Top' | 'Bottom' | 'Left' | 'Right';
 
   export type SpacingProps = Partial<{
-    [key in `${Spacing}${SpacingValues}`]: number | string;
+    [key in `${Spacing}${SpacingValues}`]: string;
   }>;
 }
 
