@@ -2,15 +2,15 @@
 const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
-  class Video extends Model {
+  class View extends Model {
     static associate(models) {
-      Video.belongsTo(models.Course, {
-        foreignKey: 'course_id',
-        as: 'Course',
+      View.belongsTo(models.Course, {
+        foreignKey: 'video_id',
+        as: 'Video',
         targetKey: 'id',
         useJunctionTable: false,
       });
-      Video.belongsTo(models.User, {
+      View.belongsTo(models.User, {
         foreignKey: 'user_id',
         as: 'User',
         targetKey: 'id',
@@ -18,7 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       });
     }
   }
-  Video.init(
+  View.init(
     {
       user_id: DataTypes.INTEGER,
       video_id: DataTypes.INTEGER,
@@ -30,8 +30,8 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       freezeTableName: true,
-      tableName: 'Video',
-      modelName: 'Video',
+      tableName: 'View',
+      modelName: 'View',
       underscored: true,
       paranoid: true,
       createdAt: 'created_at',
@@ -40,5 +40,5 @@ module.exports = (sequelize, DataTypes) => {
     },
   );
 
-  return Video;
+  return View;
 };
