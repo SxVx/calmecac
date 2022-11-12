@@ -50,6 +50,7 @@
     "react-native-splash-screen": "^3.3.0",
     "react-native-stream": "^0.1.9",
     "react-native-svg": "^13.5.0",
+    "react-native-svg-transformer": "^1.0.0",
     "react-native-tcp": "^3.2.1",
     "react-native-udp": "^2.1.0",
     "react-native-vector-icons": "^9.2.0",

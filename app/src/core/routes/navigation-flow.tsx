@@ -3,12 +3,19 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import MainNavigation from './tab-navigation';
 import Login from '@screens/login';
-import { useWalletConnect } from '@walletconnect/react-native-dapp';
+import Typography from '@core/ut-kit/typography';
 
 const { Navigator, Screen } = createNativeStackNavigator();
 
 const NavigationFlow = () => {
-  const connection = useWalletConnect();
+  const {
+    isLoading,
+    authState: { isSignedIn },
+  } = useAuth();
+
+  if (isLoading) {
+    return <Typography>Loading...</Typography>;
+  }
 
   return (
     <Navigator
@@ -16,7 +23,7 @@ const NavigationFlow = () => {
         headerShown: false,
       }}
     >
-      {connection.connected ? (
+      {isSignedIn ? (
         <Screen name="MainNavigation" component={MainNavigation} />
       ) : (
         <Screen name="Login" component={Login} />
