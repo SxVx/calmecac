@@ -20,6 +20,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       content_url: DataTypes.INTEGER,
       course_id: DataTypes.INTEGER,
+      order_in_course: DataTypes.INTEGER,
       created_at: DataTypes.DATE,
       updated_at: DataTypes.DATE,
       deleted_at: DataTypes.DATE,

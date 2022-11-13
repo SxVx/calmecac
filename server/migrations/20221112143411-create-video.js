@@ -20,6 +20,11 @@ module.exports = {
         type: Sequelize.BIGINT,
       },
 
+      order_in_course: {
+        allowNull: null,
+        type: Sequelize.INTEGER,
+      },
+
       created_at: {
         allowNull: true,
         type: Sequelize.DATE,
