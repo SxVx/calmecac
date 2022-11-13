@@ -4,7 +4,7 @@
   "editor.rulers": [100],
   "editor.trimAutoWhitespace": true,
   "editor.tabSize": 2,
-  "cSpell.words": [],
+  "cSpell.words": ["fieldname", "Hackathon"],
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#3e0555",
     "activityBar.background": "#3e0555",

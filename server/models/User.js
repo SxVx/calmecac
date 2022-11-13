@@ -37,6 +37,9 @@ module.exports = (sequelize, DataTypes) => {
         },
       },
       password: DataTypes.STRING,
+      role: DataTypes.STRING, // ( creator | consumer )
+      wallet_hash: DataTypes.STRING,
+      image_url: DataTypes.STRING,
       created_at: DataTypes.DATE,
       updated_at: DataTypes.DATE,
       deleted_at: DataTypes.DATE,

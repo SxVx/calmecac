@@ -31,6 +31,11 @@ module.exports = {
         allowNull: true,
         type: Sequelize.TEXT,
       },
+      image_url: {
+        allowNull: true,
+        type: Sequelize.TEXT,
+        comment: 'profile picture',
+      },
 
       created_at: {
         allowNull: true,

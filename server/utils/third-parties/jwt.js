@@ -14,7 +14,7 @@ module.exports = {
 
   /**
    * MIDDLEWARE; Verifies token authenticity and gives access to the resource
-   * @params Router req, req, next
+   * @params Router req, res, next
    */
   verifyToken: async (req, res, next) => {
     const bearerHeader = req.headers['authorization'];
@@ -28,6 +28,21 @@ module.exports = {
 
     req.token = token;
     req.USER_LOGGED = dataUser;
+    next();
+  },
+
+  /**
+   * MIDDLEWARE: Token expires by forcing timeout
+   * @param Router req, res, next
+   */
+  expireToken: async (req, res, next) => {
+    const bearerHeader = req.headers['authorization'];
+    if (!bearerHeader) return next(createError.Unauthorized('Access token is required'));
+
+    jwt.sign(bearerHeader, '', { expiresIn: 1 }, (logout, err) => {
+      if (err) next(createError.Unauthorized('' + err));
+      return logout;
+    });
     next();
   },
 };

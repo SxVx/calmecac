@@ -12,4 +12,6 @@ module.exports = {
       });
     });
   },
+  compareSync: bcrypt.compareSync,
+  hash: bcrypt.hash,
 };
