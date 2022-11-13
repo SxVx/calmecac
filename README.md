@@ -84,9 +84,9 @@ PRIVATE_KEY='PRIVATE_KEY' // your private key
 ```
 Note:
 ```bash
-    Item memory item = marketplace.getItem(itemId);
-    //require( block.timestamp - item.createdAt > 4 weeks, "You must wait at least 4 weeks to distribute royalties" );
-    // To run the tests it is necessary to comment this validation and run them
+Item memory item = marketplace.getItem(itemId);
+//require( block.timestamp - item.createdAt > 4 weeks, "You must wait at least 4 weeks to distribute royalties" );
+// To run the tests it is necessary to comment this validation and run them
 
 To run the tests correctly, it is necessary to comment line 74 of the StakingCumulative.sol smart contract.
 Because it has restrictions to every 4 weeks of staking time.
