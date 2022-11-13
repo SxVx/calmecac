@@ -23,8 +23,7 @@ We're proud to have created the real-time connection of the `Dapp`, creating the
 
 ## What we learned
 
-We learned about Blockchain, Smart Contracts (continue..)
-
+We learned about `Blockchain`, `Smart Contracts`, `Hardhat`, `Avalanche`, `ORM Sequelize`, `MariaDB`, `Express`, `AWS`, `Docker`, `React`, `React Native`, `Styled Components`, `Axios`
 ## What's next for Calmecac
 
 (add nexts contributions or proccess about applications..)
