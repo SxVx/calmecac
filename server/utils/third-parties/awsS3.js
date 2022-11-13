@@ -1,6 +1,4 @@
 const aws = require('aws-sdk');
-const winston = require('./winston');
-const util = require('util');
 
 const s3 = new aws.S3({
   endpoint: process.env.SPACES_ENDPOINT,
@@ -37,7 +35,6 @@ const s3getUrl = async (path) => {
       Expires: 60 * 5, // time in seconds
     });
   } catch (error) {
-    winston.error(util.format(error));
     return null;
   }
 };

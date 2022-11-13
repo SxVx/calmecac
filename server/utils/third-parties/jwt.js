@@ -9,7 +9,7 @@ module.exports = {
    * @returns Promise String
    */
   generateToken: async (payload) => {
-    return jwt.sign(payload, SECRET_KEY, { expiresIn: '1d' });
+    return jwt.sign(payload, SECRET_KEY, { expiresIn: 30 * 60 });
   },
 
   /**

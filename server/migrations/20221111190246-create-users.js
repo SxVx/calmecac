@@ -25,7 +25,7 @@ module.exports = {
       },
       role: {
         allowNull: true,
-        type: Sequelize.STRING(10),
+        type: Sequelize.STRING,
       },
       wallet_hash: {
         allowNull: true,
