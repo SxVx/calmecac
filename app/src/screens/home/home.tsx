@@ -8,8 +8,7 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 import { Avatar, Badge, Button, LinearProgress } from '@rneui/themed';
 import { Card } from '@rneui/themed';
 import { AirbnbRating } from '@rneui/themed';
-import { useWalletConnect } from '@walletconnect/react-native-dapp';
-import axios from 'axios';
+
 import React from 'react';
 import {
   FlatListProps,
@@ -62,7 +61,6 @@ type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
 const Home = ({ navigation: { navigate } }: Props) => {
   const [coursesList, setCoursesList] = React.useState<Course[]>([]);
-  const { data } = useQuery(['/'], param => axiosInstance());
 
   React.useEffect(() => {
     const timeoutId = setTimeout(() => {

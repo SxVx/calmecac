@@ -9,7 +9,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 
-interface Props extends Omit<FlatListProps<any>, 'renderItem'> {
+interface Props extends FlatListProps<any> {
   data: any;
   showReview?: boolean;
 }
@@ -46,7 +46,14 @@ const renderItem =
     );
 
 const CourseList = ({ data, showReview = true, ...rest }: Props) => {
-  return <FlatList data={data} renderItem={renderItem(showReview)} {...rest} />;
+  return (
+    <FlatList
+      data={data}
+      // @ts-ignore
+      renderItem={renderItem(showReview)}
+      {...rest}
+    />
+  );
 };
 
 export default CourseList;

@@ -1,17 +1,16 @@
-import Axios, { AxiosError, AxiosRequestConfig } from 'axios';
+import axios, { AxiosError, AxiosRequestConfig } from 'axios';
 
-import Config from 'react-native-config';
-
-export const instance = Axios.create({
-  baseURL: 'https://9a96-2806-262-487-140d-3d09-79eb-5b1-644f.ngrok.io',
+export const instance = axios.create({
+  baseURL: 'https://aa3c-2806-262-487-140d-3d09-79eb-5b1-644f.ngrok.io',
 });
 
-export const axiosInstance = async <T>(
+export const axiosInstance = <T>(
   config: AxiosRequestConfig = {},
 ): Promise<T> => {
-  const source = Axios.CancelToken.source();
-  const promise = (await instance({ ...config, cancelToken: source.token }))
-    .data;
+  const source = axios.CancelToken.source();
+  const promise = instance({ ...config, cancelToken: source.token }).then(
+    ({ data }) => data,
+  );
 
   // @ts-ignore
   promise.cancel = () => {

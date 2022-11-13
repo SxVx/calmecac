@@ -1,4 +1,10 @@
-import { View, Text, StyleSheet } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Pressable,
+  TouchableOpacity,
+} from 'react-native';
 import React from 'react';
 import { Avatar, Badge, Button } from '@rneui/themed';
 import { useWalletConnect } from '@walletconnect/react-native-dapp';
@@ -9,8 +15,9 @@ import styled from 'styled-components/native';
 
 import profile from './utils/mock/profile';
 import { Card } from '@rneui/base';
+import ROUTES from '@core/constants/routes';
 
-const Profile = () => {
+const Profile = ({ navigation: { navigate } }) => {
   const connection = useWalletConnect();
 
   const onLogout = async () => {
@@ -45,6 +52,14 @@ const Profile = () => {
         <StyledCard>
           <Typography>About</Typography>
         </StyledCard>
+        <TouchableOpacity
+          onPress={() => navigate(ROUTES.MY_COURSES)}
+          activeOpacity={0.8}
+        >
+          <StyledCard>
+            <Typography>My courses</Typography>
+          </StyledCard>
+        </TouchableOpacity>
       </Body>
     </Container>
   );

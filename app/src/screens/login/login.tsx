@@ -16,15 +16,31 @@ import MetamaskIcon from '@core/assets/images/icons/metamask.svg';
 
 import { useFocusEffect } from '@react-navigation/native';
 import theme from '@core/theme';
-import Video from 'react-native-video';
+
+import { useMutation } from 'react-query';
+import axiosInstance from '@core/api/axiosInstance';
 
 const Login = ({ navigation: { setOptions } }) => {
   const connection = useWalletConnect();
   const [volume, setVolume] = React.useState(0);
+  const { mutateAsync } = useMutation(() =>
+    axiosInstance<any>({
+      url: '/v1/auth/login',
+      method: 'post',
+    }),
+  );
 
   const onLogin = async () => {
     try {
       await connection?.connect?.();
+
+      const data = await mutateAsync(undefined, {
+        email: 'correoTest1@calmecac.com',
+        password: 'P4ssw0rd?gX',
+        wallet_hash: connection?.accounts?.[0],
+      });
+
+      console.log(data);
     } catch (error) {
       console.warn(error);
     }
