@@ -50,7 +50,9 @@ cd smartcontracts
 npx hardhat test
 npx hardhat run scripts/deployStaking.js --network fuji
 
-To deploy the contracts on the Fuji testnet you need the RPC URL and the Private Key of the wallet to use:
+To deploy the contracts on the Fuji testnet you need the RPC URL and the Private Key of the wallet
+ to use:
+ 
 FUJI_RPC_URL="FUJI_RPC_URL" // RPC URL FUJI Test Network
 PRIVATE_KEY='PRIVATE_KEY' // your private key 
 ```
