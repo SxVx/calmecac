@@ -31,7 +31,7 @@ We learned about `Blockchain`, `Smart Contracts`, `Hardhat`, `Avalanche`, `ORM S
 - The next steps on our roadmap
 - Verification in 2 steps to all users
 - Implement security against cross-site  scripting (XSS)
-- Use Lens Protocol to make a community 
+- Use Lens Protocol to make a community
 - Have 50 users at month
 - Storage on IPFS
 - Implement: Tech courses, Design courses and languages courses
@@ -42,7 +42,7 @@ We learned about `Blockchain`, `Smart Contracts`, `Hardhat`, `Avalanche`, `ORM S
 - FrontEnd
 ```bash
 
-cd app && yarn/npm && (yarn/npm) android 
+cd app && yarn/npm && (yarn/npm) android
 
 By using the sequence of commands aboves, the project for android will be bundled and ready to work on.
 
@@ -50,8 +50,23 @@ By using the sequence of commands aboves, the project for android will be bundle
 - BackEnd:
 ```bash
 
-cd server (continue...)
+cd server
 
+# Create the .env file to start the project from the .env.example it is necessary to include an S3 bucket service
+cp .env.example .env
+# Install packages npm
+npm i
+# Crate BD en MariaDB and access phpmyadmin,for more information check config docker-compose-yml
+docker-compose up .
+# Create and initialize the database
+npm run db:drop && npm run db:create && npm run migrate && npm run seed
+# run project in development, check package.json for others scripts
+npm run dev
+
+#Note:If you don't have docker configured you can manually add the environment variables for mariadb
+
+There is a file "Camecal.postman_collection.json" that can provisionally serve as a reference to use the api.
+This file is to work with POSTMAN, the authenticated is by Bearer Token
 ```
 - Blockchain:
 ```bash
@@ -65,18 +80,23 @@ to use:
 
 ```bash
 FUJI_RPC_URL="FUJI_RPC_URL" // RPC URL FUJI Test Network
-PRIVATE_KEY='PRIVATE_KEY' // your private key 
+PRIVATE_KEY='PRIVATE_KEY' // your private key
 ```
-Note: 
-```bash 
+Note:
+```bash
 Item memory item = marketplace.getItem(itemId);
 //require( block.timestamp - item.createdAt > 4 weeks, "You must wait at least 4 weeks to distribute royalties" );
 // To run the tests it is necessary to comment this validation and run them
+Note:
+```bash
+    Item memory item = marketplace.getItem(itemId);
+    //require( block.timestamp - item.createdAt > 4 weeks, "You must wait at least 4 weeks to distribute royalties" );
+    // To run the tests it is necessary to comment this validation and run them
 
-To run the tests correctly, it is necessary to comment line 74 of the StakingCumulative.sol smart contract. 
+To run the tests correctly, it is necessary to comment line 74 of the StakingCumulative.sol smart contract.
 Because it has restrictions to every 4 weeks of staking time.
 ```
- ## Staking 
+ ## Staking
 
  As a first version, Staking was added to receive commission as follows:
  ```bash

@@ -1,0 +1,1252 @@
+{
+	"info": {
+		"_postman_id": "6454d571-d762-4fdc-b7ab-7fb0baa54198",
+		"name": "Camecal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "RootPath",
+			"item": [
+				{
+					"name": "rootPath",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}",
+							"host": [
+								"{{base_url}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "User - List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/user/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"user",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Auth - Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"user.nuevo1@camecal.com\",\n    \"password\": \"123456\",\n    \"xwallet_hash\": \"123456\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/auth/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Auth - Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\" : \"user.nuevo1@camecal.com\",\n    \"password\": \"123456\",\n    \"xwallet_hash\": \"123456\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/auth/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "646"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"286-Uil9G5TOWKitb64Yit9o9h0hLFE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Nov 2022 23:16:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"username\": \"Usuario nuevo\",\n        \"email\": \"user.nuevo1@camecal.com\",\n        \"role\": \"creator\",\n        \"wallet_hash\": \"123456789\",\n        \"image_url\": \"https://qa-staging-frqtal.nyc3.digitaloceanspaces.com/Hackathon/user/user-2022-11-12%2016%3A36%3A26.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=IQO5HZNGKXQNPCIQB7SK%2F20221112%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221112T231621Z&X-Amz-Expires=300&X-Amz-Signature=5f578ae79d8cce0b1ec6e5b6ed627ed73326d334b6768ad665ea20f1b8abfe3b&X-Amz-SignedHeaders=host\",\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNjY4Mjk0OTgwLCJleHAiOjE2NjgzODEzODB9.mWR8ZE0dSGip2qzNiaakK-HpUWoz9bXnee37NNtA_ts\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Auth - Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "username",
+									"value": "Usuario nuevo",
+									"type": "default"
+								},
+								{
+									"key": "email",
+									"value": "user.nuevo2@camecal.com",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "123456",
+									"type": "default"
+								},
+								{
+									"key": "role",
+									"value": "creator",
+									"type": "default"
+								},
+								{
+									"key": "wallet_hash",
+									"value": "123456789",
+									"type": "default"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/sxvxwx/Documentos/308387203_5704855736237886_6608281553248105206_n.jpg"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/auth/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Auth - Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "username",
+											"value": "Usuario nuevo",
+											"type": "default"
+										},
+										{
+											"key": "email",
+											"value": "user.nuevo2@camecal.com",
+											"type": "default"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "default"
+										},
+										{
+											"key": "role",
+											"value": "creator",
+											"type": "default"
+										},
+										{
+											"key": "wallet_hash",
+											"value": "123456789",
+											"type": "default"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/home/sxvxwx/Documentos/308387203_5704855736237886_6608281553248105206_n.jpg"
+										}
+									],
+									"options": {
+										"raw": {
+											"language": "text"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/auth/register",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "498"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1f2-ybpzGxzUNKidDfIXOtzk6ZjE42w\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 12 Nov 2022 22:40:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"username\": \"Usuario nuevo\",\n        \"email\": \"user.nuevo2@camecal.com\",\n        \"role\": \"creator\",\n        \"wallet_hash\": \"123456789\",\n        \"image_url\": \"https://qa-staging-frqtal.nyc3.digitaloceanspaces.com/Hackathon/user/user-2022-11-12%2016%3A40%3A12.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=IQO5HZNGKXQNPCIQB7SK%2F20221112%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221112T224013Z&X-Amz-Expires=300&X-Amz-Signature=527ed236a68dccf6777d92d52fe2d188bcb4cc0982d0cedcfdcabab3b93b5359&X-Amz-SignedHeaders=host\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Auth - Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNjY4Mjk0OTgwLCJleHAiOjE2NjgzODEzODB9.mWR8ZE0dSGip2qzNiaakK-HpUWoz9bXnee37NNtA_ts",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/auth/logout",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Category",
+			"item": [
+				{
+					"name": "Category - List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/category/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"category",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Category - List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/v1/category/list",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"category",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1249"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4e1-oEqAufsMA8OJBqD2cokZRLJJ/oI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 13 Nov 2022 00:35:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"Development\",\n            \"created_at\": \"2022-11-13T00:33:38.000Z\",\n            \"updated_at\": \"2022-11-13T00:33:38.000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Business\",\n            \"created_at\": \"2022-11-13T00:33:38.000Z\",\n            \"updated_at\": \"2022-11-13T00:33:38.000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Finance\",\n            \"created_at\": \"2022-11-13T00:33:38.000Z\",\n            \"updated_at\": \"2022-11-13T00:33:38.000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 4,\n            \"name\": \"IT\",\n            \"created_at\": \"2022-11-13T00:33:38.000Z\",\n            \"updated_at\": \"2022-11-13T00:33:38.000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Office\",\n            \"created_at\": \"2022-11-13T00:33:38.000Z\",\n            \"updated_at\": \"2022-11-13T00:33:38.000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Personal\",\n            \"created_at\": \"2022-11-13T00:33:38.000Z\",\n            \"updated_at\": \"2022-11-13T00:33:38.000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Design\",\n            \"created_at\": \"2022-11-13T00:33:38.000Z\",\n            \"updated_at\": \"2022-11-13T00:33:38.000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Marketing\",\n            \"created_at\": \"2022-11-13T00:33:38.000Z\",\n            \"updated_at\": \"2022-11-13T00:33:38.000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 9,\n            \"name\": \"Health\",\n            \"created_at\": \"2022-11-13T00:33:38.000Z\",\n            \"updated_at\": \"2022-11-13T00:33:38.000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 10,\n            \"name\": \"Music\",\n            \"created_at\": \"2022-11-13T00:33:38.000Z\",\n            \"updated_at\": \"2022-11-13T00:33:38.000Z\",\n            \"deleted_at\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Category - Create Preferences",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"preferences\": [\n        {\n            \"user_id\": 1,\n            \"category_id\": 1\n        },\n        {\n            \"user_id\": 1,\n            \"category_id\": 2\n        },\n        {\n            \"user_id\": 1,\n            \"category_id\": 4\n        }\n\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/category/create-preferences",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"category",
+								"create-preferences"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Category - Create Preferences",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"preferences\": [\n        {\n            \"user_id\": 1,\n            \"category_id\": 1\n        },\n        {\n            \"user_id\": 1,\n            \"category_id\": 1\n        },\n        {\n            \"user_id\": 1,\n            \"category_id\": 4\n        }\n\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/category/create-preferences",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"category",
+										"create-preferences"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "415"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19f-9NmP/NhGqHTfJ2OG+dWItdqhdMc\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 13 Nov 2022 01:33:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"user_id\": 1,\n            \"category_id\": 1,\n            \"created_at\": \"2022-11-13T01:25:57.000Z\",\n            \"updated_at\": \"2022-11-13T01:25:57.000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 2,\n            \"user_id\": 1,\n            \"category_id\": 3,\n            \"created_at\": \"2022-11-13T01:25:57.000Z\",\n            \"updated_at\": \"2022-11-13T01:25:57.000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 3,\n            \"user_id\": 1,\n            \"category_id\": 4,\n            \"created_at\": \"2022-11-13T01:25:57.000Z\",\n            \"updated_at\": \"2022-11-13T01:25:57.000Z\",\n            \"deleted_at\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Category - Update Preferences",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"preferences\": [\n        {\n            \"user_id\": 1,\n            \"category_id\": 5\n        },\n        {\n            \"user_id\": 1,\n            \"category_id\": 6\n        },\n        {\n            \"user_id\": 1,\n            \"category_id\": 7\n        }\n\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/category/update-preferences",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"category",
+								"update-preferences"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Category - Update Preferences",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"preferences\": [\n        {\n            \"user_id\": 1,\n            \"category_id\": 5\n        },\n        {\n            \"user_id\": 1,\n            \"category_id\": 6\n        },\n        {\n            \"user_id\": 1,\n            \"category_id\": 7\n        }\n\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/category/update-preferences",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"category",
+										"update-preferences"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "418"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1a2-wYXAGgFweDLrtEODYDgXPODLXi0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 13 Nov 2022 01:47:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 16,\n            \"user_id\": 1,\n            \"category_id\": 5,\n            \"created_at\": \"2022-11-13T01:47:48.000Z\",\n            \"updated_at\": \"2022-11-13T01:47:48.000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 17,\n            \"user_id\": 1,\n            \"category_id\": 6,\n            \"created_at\": \"2022-11-13T01:47:48.000Z\",\n            \"updated_at\": \"2022-11-13T01:47:48.000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 18,\n            \"user_id\": 1,\n            \"category_id\": 7,\n            \"created_at\": \"2022-11-13T01:47:48.000Z\",\n            \"updated_at\": \"2022-11-13T01:47:48.000Z\",\n            \"deleted_at\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Category - User Preferences",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/category/user-preferences",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"category",
+								"user-preferences"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Category - User Preferences",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/v1/category/user-preferences",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"category",
+										"user-preferences"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "381"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"17d-uffmQHG7r7FMLnVqkrVNTgXAiQw\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 13 Nov 2022 02:47:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 5,\n            \"name\": \"Office\",\n            \"created_at\": \"2022-11-13T00:33:38.000Z\",\n            \"updated_at\": \"2022-11-13T00:33:38.000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Personal\",\n            \"created_at\": \"2022-11-13T00:33:38.000Z\",\n            \"updated_at\": \"2022-11-13T00:33:38.000Z\",\n            \"deleted_at\": null\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Design\",\n            \"created_at\": \"2022-11-13T00:33:38.000Z\",\n            \"updated_at\": \"2022-11-13T00:33:38.000Z\",\n            \"deleted_at\": null\n        }\n    ]\n}"
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{token}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Course",
+			"item": [
+				{
+					"name": "Course - List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/course/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"course",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Course - List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/v1/course/list",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"course",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "3369"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d29-5g2JrKYTQ9lpU6KknILpaPhco6I\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 13 Nov 2022 04:40:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"name\": \"nombre del curso\",\n            \"description\": \"Esto es un curso\",\n            \"image_url\": null,\n            \"category\": []\n        },\n        {\n            \"id\": 2,\n            \"name\": \"nombre del curso\",\n            \"description\": \"Esto es un curso\",\n            \"image_url\": null,\n            \"category\": []\n        },\n        {\n            \"id\": 3,\n            \"name\": \"nombre del curso\",\n            \"description\": \"Esto es un curso\",\n            \"image_url\": \"https://qa-staging-frqtal.nyc3.digitaloceanspaces.com/Hackathon/course/course-2022-11-12%2021%3A43%3A51.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=IQO5HZNGKXQNPCIQB7SK%2F20221113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221113T044001Z&X-Amz-Expires=300&X-Amz-Signature=54238b3ebcd30146a97e10ad68fdecc7276ae2c7283c215a5b736da6e4e4481a&X-Amz-SignedHeaders=host\",\n            \"category\": []\n        },\n        {\n            \"id\": 4,\n            \"name\": \"nombre del curso\",\n            \"description\": \"Esto es un curso\",\n            \"image_url\": null,\n            \"category\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Development\"\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"Business\"\n                },\n                {\n                    \"id\": 3,\n                    \"name\": \"Finance\"\n                },\n                {\n                    \"id\": 4,\n                    \"name\": \"IT\"\n                }\n            ]\n        },\n        {\n            \"id\": 5,\n            \"name\": \"nombre del curso\",\n            \"description\": \"Esto es un curso\",\n            \"image_url\": null,\n            \"category\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Development\"\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"Business\"\n                },\n                {\n                    \"id\": 4,\n                    \"name\": \"IT\"\n                },\n                {\n                    \"id\": 7,\n                    \"name\": \"Design\"\n                }\n            ]\n        },\n        {\n            \"id\": 6,\n            \"name\": \"nombre del curso\",\n            \"description\": \"Esto es un curso\",\n            \"image_url\": \"https://qa-staging-frqtal.nyc3.digitaloceanspaces.com/Hackathon/course/course-2022-11-12%2022%3A26%3A17.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=IQO5HZNGKXQNPCIQB7SK%2F20221113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221113T044001Z&X-Amz-Expires=300&X-Amz-Signature=076019379e8512bf2b1ab633ccc0c5dd480b7069678317da209e55f73d56b6f4&X-Amz-SignedHeaders=host\",\n            \"category\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Development\"\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"Business\"\n                },\n                {\n                    \"id\": 4,\n                    \"name\": \"IT\"\n                },\n                {\n                    \"id\": 7,\n                    \"name\": \"Design\"\n                }\n            ]\n        },\n        {\n            \"id\": 7,\n            \"name\": \"nombre del curso\",\n            \"description\": \"Esto es un curso\",\n            \"image_url\": \"https://qa-staging-frqtal.nyc3.digitaloceanspaces.com/Hackathon/course/course-2022-11-12%2022%3A27%3A35.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=IQO5HZNGKXQNPCIQB7SK%2F20221113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221113T044001Z&X-Amz-Expires=300&X-Amz-Signature=d5bf3344cb84a47e328ec0b7d3caf1845e2ce446d2b27e02422f3851ccb65eba&X-Amz-SignedHeaders=host\",\n            \"category\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Development\"\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"Business\"\n                },\n                {\n                    \"id\": 4,\n                    \"name\": \"IT\"\n                },\n                {\n                    \"id\": 7,\n                    \"name\": \"Design\"\n                }\n            ]\n        },\n        {\n            \"id\": 8,\n            \"name\": \"nombre del curso\",\n            \"description\": \"Esto es un curso\",\n            \"image_url\": \"https://qa-staging-frqtal.nyc3.digitaloceanspaces.com/Hackathon/course/course-2022-11-12%2022%3A36%3A06.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=IQO5HZNGKXQNPCIQB7SK%2F20221113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221113T044001Z&X-Amz-Expires=300&X-Amz-Signature=3e50bb671dccca98339485f411707d04c6b2a76cc174f97cd83a350d5e1ffea1&X-Amz-SignedHeaders=host\",\n            \"category\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Development\"\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"Business\"\n                },\n                {\n                    \"id\": 4,\n                    \"name\": \"IT\"\n                },\n                {\n                    \"id\": 7,\n                    \"name\": \"Design\"\n                }\n            ]\n        },\n        {\n            \"id\": 9,\n            \"name\": \"nombre del curso\",\n            \"description\": \"Esto es un curso\",\n            \"image_url\": \"https://qa-staging-frqtal.nyc3.digitaloceanspaces.com/Hackathon/course/course-2022-11-12%2022%3A36%3A25.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=IQO5HZNGKXQNPCIQB7SK%2F20221113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221113T044001Z&X-Amz-Expires=300&X-Amz-Signature=cdf29ea18478705ab3d7f2e7e93917458adb7efed3eb0ec443866d0e6cfd2cc7&X-Amz-SignedHeaders=host\",\n            \"category\": [\n                {\n                    \"id\": 1,\n                    \"name\": \"Development\"\n                },\n                {\n                    \"id\": 2,\n                    \"name\": \"Business\"\n                },\n                {\n                    \"id\": 4,\n                    \"name\": \"IT\"\n                },\n                {\n                    \"id\": 7,\n                    \"name\": \"Design\"\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Course - Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "nombre del curso",
+									"type": "default"
+								},
+								{
+									"key": "description",
+									"value": "Esto es un curso",
+									"type": "default"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/sxvxwx/309158638_5569623076454157_8140732546818136075_n.jpg"
+								},
+								{
+									"key": "categories_ids",
+									"value": "[1,2,4,7]",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/course/create",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"course",
+								"create"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Course - Create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "nombre del curso",
+											"type": "default"
+										},
+										{
+											"key": "description",
+											"value": "Esto es un curso",
+											"type": "default"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/home/sxvxwx/309158638_5569623076454157_8140732546818136075_n.jpg"
+										},
+										{
+											"key": "categories_ids",
+											"value": "[1,2,4,7]",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/course/create",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"course",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "580"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"244-kd6QNWP9Dv+C1g7BAAxKjWP78Rs\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 13 Nov 2022 04:36:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 9,\n        \"name\": \"nombre del curso\",\n        \"description\": \"Esto es un curso\",\n        \"image_url\": \"https://qa-staging-frqtal.nyc3.digitaloceanspaces.com/Hackathon/course/course-2022-11-12%2022%3A36%3A25.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=IQO5HZNGKXQNPCIQB7SK%2F20221113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221113T043626Z&X-Amz-Expires=300&X-Amz-Signature=c2c770b9c8f74601fdad35bbe4efda992235156ff25215f7d77db5024c27cfc5&X-Amz-SignedHeaders=host\",\n        \"category\": [\n            {\n                \"id\": 1,\n                \"name\": \"Development\"\n            },\n            {\n                \"id\": 2,\n                \"name\": \"Business\"\n            },\n            {\n                \"id\": 4,\n                \"name\": \"IT\"\n            },\n            {\n                \"id\": 7,\n                \"name\": \"Design\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Course - Update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Curso update\",\n    \"description\": \"Descripcion del curso kjlk\",\n    \"categories_ids\": [2,4]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/course/update/1",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"course",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Course - Update",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Curso update\",\n    \"description\": \"Descripcion del curso kjlk\",\n    \"categories_ids\": [2,4]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/course/update/1",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"course",
+										"update",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "160"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a0-pWjAGM/3BgVWCOkEriDXWyF+8M4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 13 Nov 2022 05:54:27 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"id\": 1,\n        \"name\": \"Curso update\",\n        \"description\": \"Descripcion del curso kjlk\",\n        \"image_url\": null,\n        \"category\": [\n            {\n                \"id\": 2,\n                \"name\": \"Business\"\n            },\n            {\n                \"id\": 4,\n                \"name\": \"IT\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Video",
+			"item": [
+				{
+					"name": "Video - List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/v1/course/video/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"course",
+								"video",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Video - Create",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "Video - create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "video",
+											"type": "file",
+											"src": "/home/sxvxwx/Descargas/patricio_Vs_bob.mp4"
+										},
+										{
+											"key": "course_id",
+											"value": "1",
+											"type": "default"
+										},
+										{
+											"key": "order_in_course",
+											"value": "1",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/course/video/create",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"course",
+										"video",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "436"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b4-LlA+/hCUeKWMjQFwhrYvOOBJC6E\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 13 Nov 2022 07:12:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"course_id\": \"1\",\n        \"order_in_course\": \"1\",\n        \"content_url\": \"https://qa-staging-frqtal.nyc3.digitaloceanspaces.com/Hackathon/video/video-2022-11-13%2001%3A11%3A56.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=IQO5HZNGKXQNPCIQB7SK%2F20221113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221113T071200Z&X-Amz-Expires=300&X-Amz-Signature=5f94a8b64cb99e56c6a3c61ab750666e225e6798bbe82f6065dc5617396726ef&X-Amz-SignedHeaders=host\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Video - Update",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "Video - create",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "video",
+											"type": "file",
+											"src": "/home/sxvxwx/Descargas/patricio_Vs_bob.mp4"
+										},
+										{
+											"key": "course_id",
+											"value": "1",
+											"type": "default"
+										},
+										{
+											"key": "order_in_course",
+											"value": "1",
+											"type": "default"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/v1/course/video/create",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"course",
+										"video",
+										"create"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "436"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b4-LlA+/hCUeKWMjQFwhrYvOOBJC6E\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 13 Nov 2022 07:12:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": {\n        \"course_id\": \"1\",\n        \"order_in_course\": \"1\",\n        \"content_url\": \"https://qa-staging-frqtal.nyc3.digitaloceanspaces.com/Hackathon/video/video-2022-11-13%2001%3A11%3A56.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=IQO5HZNGKXQNPCIQB7SK%2F20221113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221113T071200Z&X-Amz-Expires=300&X-Amz-Signature=5f94a8b64cb99e56c6a3c61ab750666e225e6798bbe82f6065dc5617396726ef&X-Amz-SignedHeaders=host\"\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
