@@ -32,7 +32,7 @@ class Auth {
 
       return res.status(HTTP_CODE.CREATED).json({ data });
     } catch (error) {
-      next(createError(HTTP_CODE, error));
+      next(createError(HTTP_CODE.INTERNAL_SERVER_ERROR, error));
     }
   };
 
@@ -64,7 +64,7 @@ class Auth {
 
       return res.json({ data });
     } catch (error) {
-      next(createError(HTTP_CODE, error));
+      next(createError(HTTP_CODE.INTERNAL_SERVER_ERROR, error));
     }
   };
 
@@ -72,7 +72,7 @@ class Auth {
     try {
       return res.status(200).json({ data: { message: 'logout' } });
     } catch (error) {
-      next(createError(HTTP_CODE, error));
+      next(createError(HTTP_CODE.INTERNAL_SERVER_ERROR, error));
     }
   };
 
