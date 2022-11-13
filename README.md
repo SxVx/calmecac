@@ -46,8 +46,32 @@ cd server (continue...)
 - Blockchain:
 ```bash
 
-cd smartcontracts (continue...)
+cd smartcontracts
+npx hardhat test
+npx hardhat run scripts/deployStaking.js --network fuji
+```
+Note: 
+```bash 
+    Item memory item = marketplace.getItem(itemId);
+    //require( block.timestamp - item.createdAt > 4 weeks, "You must wait at least 4 weeks to distribute royalties" );
+    // To run the tests it is necessary to comment this validation and run them
 
+    To run the tests correctly, it is necessary to comment line 74 of the `StakingCumulative.sol` smart contract. Because it has restrictions for every `4 weeks of staking time`.
+```
+ ## Staking 
+
+ As a first version, Staking was added to receive commission as follows:
+ ```bash
+ - creator profit: 1%.
+ - owner profit = 0.5%
+ - org profit = 0.467%
+ - referral1 profit = 0.03%
+ - referral 2 profit = 0.003%
+```
+Features :
+```bash
+- Referrals (second version)
+- Marketplace of sales on NFTs with access, benefits and royalties (second version)
 ```
 ## Contributing ✨
 

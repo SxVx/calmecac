@@ -9,7 +9,7 @@ describe("Staking", function () {
   let deployer;
   let sellerAddress, buyerAddress, organizationAddress, referral1, referral2;
   const feePercent = 25
-  const stakingPercent = 1000
+  const stakingPercent = 300
   const URI = "sample URI"
 
   beforeEach(async function () {
@@ -28,7 +28,7 @@ describe("Staking", function () {
     staking.setMarketplace( marketplace.address );
   });
 
-  describe("Purchasing course", function () {
+  describe("Purchasing marketplace items", function () {
     const price = toWei(100);
 
     beforeEach(async () => {
@@ -65,7 +65,13 @@ describe("Staking", function () {
       const mapped = events.map( ({ args }) => ({ address: args.user, amount: fromWei(args.amount.toString()), timestamp: args.timestamp.toNumber() }) );
       console.log( 'Events Profit', mapped )
 
-      await staking.connect(sellerAddress).withdraw(toWei(1));
+      // await staking.connect(referral1).withdraw(toWei(0.009));
+      // await staking.connect(referral1).withdraw(toWei(0.1));
+      console.log( 'Seller staking: ', fromWei(await staking.accountStakes(sellerAddress.address)) );
+      console.log('Seller balance', fromWei(await sellerAddress.getBalance()));
+      await staking.connect(sellerAddress).withdraw(toWei(0.1));
+      console.log( 'Seller staking: ', fromWei(await staking.accountStakes(sellerAddress.address)) );
+      console.log('Seller balance', fromWei(await sellerAddress.getBalance()));
 
       const withdrawals = await staking.queryFilter( staking.filters.Withdraw() );
       const withdrawalsMap = withdrawals.map( ({ args }) => ({ address: args.user, amount: fromWei(args.amount.toString()), timestamp: args.timestamp.toNumber() }) );

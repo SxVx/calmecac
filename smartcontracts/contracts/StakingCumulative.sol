@@ -75,10 +75,10 @@ contract StakingCumulative is AccessControl, ItemTypes, ReentrancyGuard {
         // To run the tests it is necessary to comment this validation and run them
 
         uint creatorProfit = itemStake.amount.div(100); // 1%
-        uint ownerProfit = itemStake.amount.div(100); // 0.5%
+        uint ownerProfit = itemStake.amount.div(200); // 0.5%
         uint orgProfit = itemStake.amount.div(100000).mul(467); // 0.467%
-        uint referral1Profit = itemStake.amount.div(1000).mul(1); // 0.03%
-        uint referral2Profit = itemStake.amount.div(10000).mul(1); // 0.003%
+        uint referral1Profit = itemStake.amount.div(10000).mul(3); // 0.03%
+        uint referral2Profit = itemStake.amount.div(100000).mul(3); // 0.003%
         accountStakes[item.creator] = accountStakes[item.creator].add(creatorProfit);
         emit Profit( item.creator, itemId, creatorProfit, block.timestamp );
         accountStakes[item.owner] = accountStakes[item.owner].add(ownerProfit);

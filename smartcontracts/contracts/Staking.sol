@@ -52,8 +52,8 @@ contract Staking is ItemTypes, AccessControl, ReentrancyGuard {
 
         Stake storage stake = stakes[item.itemId];
         require( block.timestamp - stake.lastTransfer > 4 weeks, "Too early" );
-        uint creatorProfit = stake.amount.div(1); // 1%
-        uint ownerProfit = stake.amount.div(1); // 5%
+        uint creatorProfit = stake.amount.div(100); // 1%
+        uint ownerProfit = stake.amount.div(20); // 5%
         uint orgProfit = stake.amount.div(100000).mul(467); // 0.467%
         uint referral1Profit = stake.amount.div(10000).mul(3); // 0.03%
         uint referral2Profit = stake.amount.div(100000).mul(3); // 0.003%

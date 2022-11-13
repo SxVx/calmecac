@@ -9,7 +9,7 @@ async function main() {
   console.log("Account balance:", (await deployer.getBalance()).toString());
 
   const feePercent = 25
-  const stakingPercent = 1000
+  const stakingPercent = 300
   const minWithdrawal = 0.01
   const minDistribution = 0.3
 
