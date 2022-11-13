@@ -12,7 +12,7 @@ import Icon from 'react-native-vector-icons/Octicons';
 import Typography from '@core/ut-kit/typography';
 import { Badge } from '@rneui/base';
 import theme from '@core/theme';
-import courses from '@screens/home/utils/mock/courses';
+import courses from '@core/utils/mocks/courses';
 
 const renderItem = ({ item }) => (
   <TouchableOpacity>

@@ -21,7 +21,7 @@ import {
 } from 'react-native';
 import { useQuery } from 'react-query';
 import styled from 'styled-components/native';
-import courses from './utils/mock/courses';
+import courses from '@core/utils/mocks/courses';
 import onGoingCourse from './utils/mock/onGoingCourse';
 
 type Course = typeof courses.data[number];
@@ -62,7 +62,7 @@ type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
 const Home = ({ navigation: { navigate } }: Props) => {
   const [coursesList, setCoursesList] = React.useState<Course[]>([]);
-  const { data } = useQuery(['/'], param => axiosInstance.get('/'));
+  const { data } = useQuery(['/'], param => axiosInstance());
 
   React.useEffect(() => {
     const timeoutId = setTimeout(() => {

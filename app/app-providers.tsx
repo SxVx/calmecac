@@ -6,7 +6,13 @@ import AuthProvider from '@core/utils/providers/auth-provider';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      suspense: false,
+    },
+  },
+});
 
 const AppProviders = ({ children }) => (
   <ThemeProvider theme={theme}>
