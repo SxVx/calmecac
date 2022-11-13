@@ -4,16 +4,16 @@ const createError = require('http-errors');
 const db = require('../../models');
 
 class CategoryController {
-  static async list(req, res, next) {
+  static list = async (req, res, next) => {
     try {
       const categories = await Category.findAll();
       return res.status(HTTP_CODE.OK).json({ data: categories });
     } catch (error) {
       next(createError(HTTP_CODE.INTERNAL_SERVER_ERROR, error));
     }
-  }
+  };
 
-  static async createPreferences({ body: { preferences } }, res, next) {
+  static createPreferences = async ({ body: { preferences } }, res, next) => {
     try {
       const listUniqueUserIds = [
         ...new Set(
@@ -51,9 +51,9 @@ class CategoryController {
     } catch (error) {
       next(createError(HTTP_CODE.INTERNAL_SERVER_ERROR, error));
     }
-  }
+  };
 
-  static async updatePreferences({ body: { preferences } }, res, next) {
+  static updatePreferences = async ({ body: { preferences } }, res, next) => {
     try {
       const listUniqueUserIds = [
         ...new Set(
@@ -100,9 +100,9 @@ class CategoryController {
     } catch (error) {
       next(createError(HTTP_CODE.INTERNAL_SERVER_ERROR, error));
     }
-  }
+  };
 
-  static async userPreferences(req, res, next) {
+  static userPreferences = async (req, res, next) => {
     try {
       const { id } = req.USER_LOGGED;
       const preferences = [
@@ -117,7 +117,7 @@ class CategoryController {
     } catch (error) {
       next(createError(HTTP_CODE.INTERNAL_SERVER_ERROR, error));
     }
-  }
+  };
 }
 
 module.exports = CategoryController;

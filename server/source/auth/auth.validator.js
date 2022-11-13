@@ -17,12 +17,12 @@ const validateRegister = [
     })
     .not()
     .isEmpty()
-    .withMessage('name field cannot be empty')
+    .withMessage('username field cannot be empty')
     .isLength({ min: 3 })
     .bail()
-    .withMessage('name field must have at least 3 letters')
+    .withMessage('username field must have at least 3 letters')
     .isString()
-    .withMessage('name field must be a string'),
+    .withMessage('username field must be a string'),
 
   check('email')
     .default(null)
