@@ -12,7 +12,7 @@ router.use('/user', user);
 router.use('/auth', auth);
 router.use('/category', category);
 router.use('/course', course);
-router.use('/course/video', video);
+router.use('/course', video);
 
 router.use(async (req, _res, next) => {
   next(createError.NotFound(`Route not Found : "${req.url}" try specifying version`));

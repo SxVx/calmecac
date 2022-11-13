@@ -7,7 +7,9 @@ const { fullCurrentDate } = require('../../utils/date');
 class VideoController {
   static list = async (req, res, next) => {
     try {
-      const videos = await Video.findAll();
+      const course_id = parseInt(req.originalUrl.split('/')[3]);
+      console.log(req.params);
+      const videos = await Video.findAll({ where: { course_id } });
       const data = await Promise.all(videos.map(this.#transform));
       return res.status(HTTP_CODE.OK).json({ data });
     } catch (error) {
@@ -26,15 +28,6 @@ class VideoController {
 
       const data = await this.#transform(video);
       return res.status(HTTP_CODE.OK).json({ data });
-    } catch (error) {
-      next(createError(HTTP_CODE.INTERNAL_SERVER_ERROR, error));
-    }
-  };
-
-  static update = async ({ body, params }, res, next) => {
-    try {
-      console.log({ body, params });
-      res.send('ooo');
     } catch (error) {
       next(createError(HTTP_CODE.INTERNAL_SERVER_ERROR, error));
     }

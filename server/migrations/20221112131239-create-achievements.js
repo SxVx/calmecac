@@ -66,7 +66,7 @@ module.exports = {
       type: 'FOREIGN KEY',
       fields: ['certificate_id'],
       references: {
-        table: 'certificate',
+        table: 'Certificate',
         field: 'id',
       },
     });
