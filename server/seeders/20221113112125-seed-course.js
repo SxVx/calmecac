@@ -40,9 +40,27 @@ module.exports = {
         description: 'This is the second course in the app',
         image_url: 'Hackathon/course/course02.jpg',
         CourseCategory: [{ category_id: 3 }, { category_id: 2 }, { category_id: 6 }],
+        Video: [
+          {
+            order_in_course: 1,
+            content_url: 'Hackathon/video/Curso2/c1.mp4',
+          },
+          {
+            order_in_course: 2,
+            content_url: 'Hackathon/video/Curso2/c2.mp4',
+          },
+          {
+            order_in_course: 3,
+            content_url: 'Hackathon/video/Curso2/c3.mp4',
+          },
+          {
+            order_in_course: 4,
+            content_url: 'Hackathon/video/Curso2/c4.mp4',
+          },
+        ],
       },
       {
-        include: ['CourseCategory'],
+        include: ['CourseCategory','Video'],
       },
     );
   },
