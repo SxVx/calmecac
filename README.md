@@ -42,7 +42,7 @@ We learned about `Blockchain`, `Smart Contracts`, `Hardhat`, `Avalanche`, `ORM S
 - FrontEnd
 ```bash
 
-cd app && yarn/npm && (yarn/npm) android
+cd app && yarn/npm && yarn/npm android
 
 By using the sequence of commands aboves, the project for android will be bundled and ready to work on.
 
@@ -82,11 +82,6 @@ to use:
 FUJI_RPC_URL="FUJI_RPC_URL" // RPC URL FUJI Test Network
 PRIVATE_KEY='PRIVATE_KEY' // your private key
 ```
-Note:
-```bash
-Item memory item = marketplace.getItem(itemId);
-//require( block.timestamp - item.createdAt > 4 weeks, "You must wait at least 4 weeks to distribute royalties" );
-// To run the tests it is necessary to comment this validation and run them
 Note:
 ```bash
     Item memory item = marketplace.getItem(itemId);
