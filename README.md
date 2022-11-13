@@ -99,3 +99,11 @@ Please let us know your contributions! 🙏🏻
 ## Happy Coding 💯
 
 Made with ❤️
+
+## Meet the Team
+
+- [Enrique Sevilla](https://github.com/SxVx)
+- [Luis Lucena](https://bio.link/luislucena)
+- [Emmanuel Canto](https://github.com/Oblivion95)
+- [Alex Ramos](https://www.linkedin.com/in/alejandro-ramos-morales-68a3b0227/)
+- [Laura Fajardo](https://www.instagram.com/_lausof_/)
