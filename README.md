@@ -65,8 +65,18 @@ npm run dev
 
 #Note:If you don't have docker configured you can manually add the environment variables for mariadb
 
+# POSTMAN
 There is a file "Camecal.postman_collection.json" that can provisionally serve as a reference to use the api.
+# Auth
 This file is to work with POSTMAN, the authenticated is by Bearer Token
+# Environments Variables
+| VARIABLE     | ENVIRONMENT | VALUE                      |
+| -----------  | ----------- | -------------------        |
+| {{base_url}} | Development | http://localhost:3000      |
+| {{token}}    | Development | GET IN RESPONSE AUTH LOGIN |
+
+All user are define in server/seeders/20221111195610-seed-users.js
+
 ```
 - Blockchain:
 ```bash
