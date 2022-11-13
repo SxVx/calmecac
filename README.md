@@ -54,9 +54,9 @@ cd server (continue...)
 - Blockchain:
 ```bash
 
-cd smartcontracts
-npx hardhat test
-npx hardhat run scripts/deployStaking.js --network fuji
+$ cd smartcontracts
+$ npx hardhat test
+$ npx hardhat run scripts/deployStaking.js --network fuji
 
 To deploy the contracts on the Fuji testnet you need the RPC URL and the Private Key of the wallet
 to use:
