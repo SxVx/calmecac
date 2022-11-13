@@ -4,6 +4,9 @@ import theme from '@core/theme';
 import { WalletConnectProvider } from '@walletconnect/react-native-dapp/dist/providers';
 import AuthProvider from '@core/utils/providers/auth-provider';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { QueryClient, QueryClientProvider } from 'react-query';
+
+const queryClient = new QueryClient();
 
 const AppProviders = ({ children }) => (
   <ThemeProvider theme={theme}>
@@ -23,7 +26,9 @@ const AppProviders = ({ children }) => (
       storageId="@walletconnect"
     >
       <AuthProvider>
-        {children}
+        <QueryClientProvider client={queryClient}>
+          {children}
+        </QueryClientProvider>
       </AuthProvider>
     </WalletConnectProvider>
   </ThemeProvider>

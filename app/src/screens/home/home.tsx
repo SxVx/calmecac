@@ -1,3 +1,4 @@
+import axiosInstance from '@core/api/axiosInstance';
 import ROUTES from '@core/constants/routes';
 import { RootStackParamList } from '@core/routes/utils/types';
 import useAuth from '@core/shared/hooks/useAuth';
@@ -8,6 +9,7 @@ import { Avatar, Badge, Button, LinearProgress } from '@rneui/themed';
 import { Card } from '@rneui/themed';
 import { AirbnbRating } from '@rneui/themed';
 import { useWalletConnect } from '@walletconnect/react-native-dapp';
+import axios from 'axios';
 import React from 'react';
 import {
   FlatListProps,
@@ -17,6 +19,7 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import { useQuery } from 'react-query';
 import styled from 'styled-components/native';
 import courses from './utils/mock/courses';
 import onGoingCourse from './utils/mock/onGoingCourse';
@@ -59,11 +62,12 @@ type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
 const Home = ({ navigation: { navigate } }: Props) => {
   const [coursesList, setCoursesList] = React.useState<Course[]>([]);
+  const { data } = useQuery(['/'], param => axiosInstance.get('/'));
 
   React.useEffect(() => {
     const timeoutId = setTimeout(() => {
       setCoursesList(courses.data);
-    }, 500);
+    }, 2500);
 
     return () => {
       clearTimeout(timeoutId);
@@ -74,45 +78,49 @@ const Home = ({ navigation: { navigate } }: Props) => {
     <>
       <StatusBar animated translucent backgroundColor="transparent" />
       <Container>
-        <StyledFlatList<React.ComponentType<FlatListProps<Course>>>
-          data={coursesList}
-          renderItem={renderItem(navigate)}
-          keyExtractor={item => item.id}
-          showsVerticalScrollIndicator={false}
-          ListHeaderComponent={
-            <>
-              <Typography variant="mediumBold">On Going</Typography>
+        <React.Suspense fallback={<Typography>Loading...</Typography>}>
+          <StyledFlatList<React.ComponentType<FlatListProps<Course>>>
+            data={coursesList}
+            renderItem={renderItem(navigate)}
+            keyExtractor={item => item.id}
+            showsVerticalScrollIndicator={false}
+            ListHeaderComponent={
+              <>
+                <Typography variant="mediumBold">On Going</Typography>
 
-              <Pressable
-                onPress={() =>
-                  navigate(ROUTES.COURSE, { course: onGoingCourse })
-                }
-              >
-                <Card wrapperStyle={styles.onGoingCourse}>
-                  <Avatar
-                    source={{ uri: 'https://source.unsplash.com/random?sig=2' }}
-                    size="large"
-                  />
-                  <CourseDetails>
-                    <Typography variant="bold">
-                      {onGoingCourse.title}
-                    </Typography>
-                    <Typography>Lecturer: {onGoingCourse.teacher}</Typography>
-                    <Typography marginBottom="sm">Progress</Typography>
-                    <LinearProgress
-                      value={onGoingCourse.progress}
-                      trackColor="red"
+                <Pressable
+                  onPress={() =>
+                    navigate(ROUTES.COURSE, { course: onGoingCourse })
+                  }
+                >
+                  <Card wrapperStyle={styles.onGoingCourse}>
+                    <Avatar
+                      source={{
+                        uri: 'https://source.unsplash.com/random?sig=2',
+                      }}
+                      size="large"
                     />
-                  </CourseDetails>
-                </Card>
-              </Pressable>
+                    <CourseDetails>
+                      <Typography variant="bold">
+                        {onGoingCourse.title}
+                      </Typography>
+                      <Typography>Lecturer: {onGoingCourse.teacher}</Typography>
+                      <Typography marginBottom="sm">Progress</Typography>
+                      <LinearProgress
+                        value={onGoingCourse.progress}
+                        trackColor="red"
+                      />
+                    </CourseDetails>
+                  </Card>
+                </Pressable>
 
-              <Typography variant="mediumBold" marginY="m">
-                Explore More courses
-              </Typography>
-            </>
-          }
-        />
+                <Typography variant="mediumBold" marginY="m">
+                  Explore More courses
+                </Typography>
+              </>
+            }
+          />
+        </React.Suspense>
       </Container>
     </>
   );
