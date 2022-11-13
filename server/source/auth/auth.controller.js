@@ -48,8 +48,10 @@ class Auth {
 
       if (!user) return next(createError.NotFound('User Not Found'));
 
-      const checkPass = await compareSync(password, user.password);
-      if (!checkPass) next(createError.Unauthorized('Invalid Access'));
+      if (!wallet_hash) {
+        const checkPass = await compareSync(password, user.password);
+        if (!checkPass) next(createError.Unauthorized('Invalid Access'));
+      }
 
       const token = await generateToken({ id: user.id });
 
