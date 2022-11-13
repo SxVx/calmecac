@@ -6,9 +6,11 @@ import Video from 'react-native-video';
 import styled from 'styled-components/native';
 import Typography from '@core/ut-kit/typography';
 
+import Icon from 'react-native-vector-icons/Octicons';
+
 type Props = NativeStackScreenProps<RootStackParamList, 'Course'>;
 
-const Course = ({ route, navigation }: Props) => {
+const Course = ({ route }: Props) => {
   const { course } = route.params;
 
   const [paused, setPaused] = React.useState(false);
@@ -27,9 +29,17 @@ const Course = ({ route, navigation }: Props) => {
           ref={ref}
           paused={paused}
         />
+        {paused && <StyledIcon name="play" size={44} color="#000" />}
       </PauseControllerContainer>
-      <Typography variant="mediumBold">{course.title}</Typography>
-      <Typography variant="medium">Teacher: {course.teacher}</Typography>
+      <Body>
+        <Typography variant="mediumBold">{course.title}</Typography>
+        <Typography variant="medium">Teacher: {course.teacher}</Typography>
+        <Typography variant="medium" marginY="xl">
+          Description: {'\n'}
+          {'\n'}
+          {course.description}
+        </Typography>
+      </Body>
     </View>
   );
 };
@@ -43,5 +53,14 @@ const StyledVideo = styled(Video)`
 const PauseControllerContainer = styled.Pressable`
   width: 100%;
   height: 300px;
-  background-color: red;
+`;
+
+const Body = styled.ScrollView`
+  padding: 0 ${({ theme }) => theme.spacing.sm}px;
+`;
+
+const StyledIcon = styled(Icon)`
+  position: absolute;
+  top: 50%;
+  align-self: center;
 `;

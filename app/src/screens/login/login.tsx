@@ -12,12 +12,12 @@ import styled from 'styled-components/native';
 import { Button } from '@rneui/themed';
 import { useWalletConnect } from '@walletconnect/react-native-dapp';
 
-import MetamaskIcon from '@core/assets/images/metamask.svg';
-import Video from 'react-native-video';
+import MetamaskIcon from '@core/assets/images/icons/metamask.svg';
+
 import { useFocusEffect } from '@react-navigation/native';
 import theme from '@core/theme';
 
-const Login = () => {
+const Login = ({ navigation: { setOptions } }) => {
   const connection = useWalletConnect();
   const [volume, setVolume] = React.useState(0);
 
@@ -34,6 +34,13 @@ const Login = () => {
       setVolume(0);
     }, []),
   );
+
+  React.useLayoutEffect(() => {
+    setOptions({
+      headerShown: false,
+      tabBarShowLabel: false,
+    });
+  });
 
   return (
     <>
@@ -65,16 +72,8 @@ export default Login;
 const Container = styled.View`
   flex: 1;
   margin-top: ${StatusBar.currentHeight}px;
-  ${({ theme }) => `
-    background-color: ${theme.colors.background.primary};
-  `}
   justify-content: center;
   align-items: center;
-`;
-
-const StyledVideo = styled(Video)`
-  ${StyleSheet.absoluteFill}
-  z-index: -1;
 `;
 
 const styles = StyleSheet.create({

@@ -17,9 +17,7 @@ import {
   View,
 } from 'react-native';
 import styled from 'styled-components/native';
-import courses from './mock/courses';
-
-import parseWallet from './utils/parseWallet';
+import courses from './utils/mock/courses';
 
 type Course = typeof courses.data[number];
 
@@ -58,14 +56,7 @@ const renderItem =
 type Props = NativeStackScreenProps<RootStackParamList, 'Home'>;
 
 const Home = ({ navigation: { navigate } }: Props) => {
-  const connection = useWalletConnect();
   const [coursesList, setCoursesList] = React.useState<Course[]>([]);
-
-  const { connected } = useWalletConnect();
-
-  const onLogout = async () => {
-    await connection?.killSession?.();
-  };
 
   React.useEffect(() => {
     const timeoutId = setTimeout(() => {
@@ -84,16 +75,12 @@ const Home = ({ navigation: { navigate } }: Props) => {
         translucent
         backgroundColor={theme.colors.background.primary}
       />
-      {/* <Typography>Wallet: {parseWallet(connection?.accounts?.[0])}</Typography> */}
-
       <StyledFlatList<React.ComponentType<FlatListProps<Course>>>
         data={coursesList}
         renderItem={renderItem(navigate)}
         keyExtractor={item => item.id}
         showsVerticalScrollIndicator={false}
       />
-
-      {connected && <Button onPress={onLogout}>Disconnect wallet</Button>}
     </Container>
   );
 };
@@ -109,5 +96,4 @@ const Container = styled.View`
   flex: 1;
   padding: ${({ theme }) => theme.spacing.sm}px;
   background-color: ${({ theme }) => theme.colors.primary};
-  margin-top: ${StatusBar.currentHeight}px;
 `;
