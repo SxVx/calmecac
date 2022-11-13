@@ -49,6 +49,10 @@ cd server (continue...)
 cd smartcontracts
 npx hardhat test
 npx hardhat run scripts/deployStaking.js --network fuji
+
+To deploy the contracts on the Fuji testnet you need the RPC URL and the Private Key of the wallet to use:
+FUJI_RPC_URL="FUJI_RPC_URL" // RPC URL FUJI Test Network
+PRIVATE_KEY='PRIVATE_KEY' // your private key 
 ```
 Note: 
 ```bash 
@@ -56,7 +60,7 @@ Note:
     //require( block.timestamp - item.createdAt > 4 weeks, "You must wait at least 4 weeks to distribute royalties" );
     // To run the tests it is necessary to comment this validation and run them
 
-    To run the tests correctly, it is necessary to comment line 74 of the `StakingCumulative.sol` smart contract. Because it has restrictions for every `4 weeks of staking time`.
+    To run the tests correctly, it is necessary to comment line 74 of the StakingCumulative.sol smart contract. Because it has restrictions to every 4 weeks of staking time.
 ```
  ## Staking 
 
@@ -65,7 +69,7 @@ Note:
  - creator profit: 1%.
  - owner profit = 0.5%
  - org profit = 0.467%
- - referral1 profit = 0.03%
+ - referral 1 profit = 0.03%
  - referral 2 profit = 0.003%
 ```
 Features :
