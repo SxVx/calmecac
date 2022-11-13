@@ -11,6 +11,16 @@
 				{
 					"name": "rootPath",
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NiwiaWF0IjoxNjY4Mjk0OTgwLCJleHAiOjE2NjgzODEzODB9.mWR8ZE0dSGip2qzNiaakK-HpUWoz9bXnee37NNtA_ts",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
@@ -44,7 +54,65 @@
 							]
 						}
 					},
-					"response": []
+					"response": [
+						{
+							"name": "User - List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/v1/user/list",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"user",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2224"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8b0-QdsY3O5yB8PW6e6xiTCY8J/Bajs\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 13 Nov 2022 10:50:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"username\": \"Lempi\",\n            \"email\": \"correoTest1@calmecac.com\",\n            \"role\": \"consumer\",\n            \"image_url\": \"https://qa-staging-frqtal.nyc3.digitaloceanspaces.com/Hackathon/user/imagen01.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=IQO5HZNGKXQNPCIQB7SK%2F20221113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221113T105058Z&X-Amz-Expires=300&X-Amz-Signature=5b1a4cd01ef8381ebc8ca3a06f947bc05253454278d0a9cbaf5b389f4e100369&X-Amz-SignedHeaders=host\"\n        },\n        {\n            \"id\": 2,\n            \"username\": \"Garrett\",\n            \"email\": \"correoTest2@calmecac.com\",\n            \"role\": \"consumer\",\n            \"image_url\": \"https://qa-staging-frqtal.nyc3.digitaloceanspaces.com/Hackathon/user/imagen02.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=IQO5HZNGKXQNPCIQB7SK%2F20221113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221113T105058Z&X-Amz-Expires=300&X-Amz-Signature=e5d0a88ce45fac895181b6e24cce664c938a72398ec828f9eb8cf5010ec332e6&X-Amz-SignedHeaders=host\"\n        },\n        {\n            \"id\": 3,\n            \"username\": \"Ladarius\",\n            \"email\": \"correoTest3@calmecac.com\",\n            \"role\": \"creator\",\n            \"image_url\": \"https://qa-staging-frqtal.nyc3.digitaloceanspaces.com/Hackathon/user/imagen03.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=IQO5HZNGKXQNPCIQB7SK%2F20221113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221113T105058Z&X-Amz-Expires=300&X-Amz-Signature=7b658f2de4b09406b6056b178fbb3e52f87bbbb2f83da00ccdfd8ae2876f6369&X-Amz-SignedHeaders=host\"\n        },\n        {\n            \"id\": 4,\n            \"username\": \"Dawn\",\n            \"email\": \"correoTest4@calmecac.com\",\n            \"role\": \"creator\",\n            \"image_url\": \"https://qa-staging-frqtal.nyc3.digitaloceanspaces.com/Hackathon/user/imagen04.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=IQO5HZNGKXQNPCIQB7SK%2F20221113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221113T105058Z&X-Amz-Expires=300&X-Amz-Signature=aabbe980f1258838a5f7c7dd5bb41e351226e08b6374b5a227d43433f0714eb7&X-Amz-SignedHeaders=host\"\n        },\n        {\n            \"id\": 5,\n            \"username\": \"Tod\",\n            \"email\": \"correoTest5@calmecac.com\",\n            \"role\": \"creator\",\n            \"image_url\": \"https://qa-staging-frqtal.nyc3.digitaloceanspaces.com/Hackathon/user/imagen05.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=IQO5HZNGKXQNPCIQB7SK%2F20221113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221113T105058Z&X-Amz-Expires=300&X-Amz-Signature=dc781ad68f976c8b92901684ddca5967bd13c5848b688b45931709bdc8f08f08&X-Amz-SignedHeaders=host\"\n        }\n    ]\n}"
+						}
+					]
 				}
 			]
 		},
@@ -58,7 +126,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"email\" : \"user.nuevo1@camecal.com\",\n    \"password\": \"123456\",\n    \"xwallet_hash\": \"123456\"\n}",
+							"raw": "{\n    \"email\" : \"correoTest1@calmecac.com\",\n    \"password\": \"P4ssw0rd?gX\",\n    \"xwallet_hash\": \"123456\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1028,7 +1096,113 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{base_url}}/v1/course/video/list",
+							"raw": "{{base_url}}/v1/course/1/video/list",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"v1",
+								"course",
+								"1",
+								"video",
+								"list"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Video - List",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{base_url}}/v1/course/1/video/list",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"v1",
+										"course",
+										"1",
+										"video",
+										"list"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1686"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"696-Sc5HD/B/qcb5GP1R93F2JmtQ7c0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 13 Nov 2022 12:47:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"data\": [\n        {\n            \"id\": 1,\n            \"course_id\": 1,\n            \"order_in_course\": 2,\n            \"content_url\": \"https://qa-staging-frqtal.nyc3.digitaloceanspaces.com/Hackathon/video/Curso1/Tokenomics_2.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=IQO5HZNGKXQNPCIQB7SK%2F20221113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221113T124758Z&X-Amz-Expires=300&X-Amz-Signature=54f4a65f6f3ffc6c29ea44e501e670b2bc0dd2206daa418d15af411f0cecd87f&X-Amz-SignedHeaders=host\"\n        },\n        {\n            \"id\": 2,\n            \"course_id\": 1,\n            \"order_in_course\": 1,\n            \"content_url\": \"https://qa-staging-frqtal.nyc3.digitaloceanspaces.com/Hackathon/video/Curso1/Tokenomics_1.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=IQO5HZNGKXQNPCIQB7SK%2F20221113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221113T124758Z&X-Amz-Expires=300&X-Amz-Signature=9f51f6fb969d8a7edb2d5516b5f0d19bcab8a7985429611b830ea7f6b9689811&X-Amz-SignedHeaders=host\"\n        },\n        {\n            \"id\": 3,\n            \"course_id\": 1,\n            \"order_in_course\": 3,\n            \"content_url\": \"https://qa-staging-frqtal.nyc3.digitaloceanspaces.com/Hackathon/video/Curso1/Tokenomics_3.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=IQO5HZNGKXQNPCIQB7SK%2F20221113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221113T124758Z&X-Amz-Expires=300&X-Amz-Signature=32e7d09fe17e207f16a5c34384c90eeb4c7ba4e1d66e4db9b40323d896f2fba9&X-Amz-SignedHeaders=host\"\n        },\n        {\n            \"id\": 4,\n            \"course_id\": 1,\n            \"order_in_course\": 4,\n            \"content_url\": \"https://qa-staging-frqtal.nyc3.digitaloceanspaces.com/Hackathon/video/Curso1/Tokenomics_4.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=IQO5HZNGKXQNPCIQB7SK%2F20221113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221113T124758Z&X-Amz-Expires=300&X-Amz-Signature=a308208e8597f915091287b2fb849f702ec6ffdd6b7225550e1181228aa90667&X-Amz-SignedHeaders=host\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Video - Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "video",
+									"type": "file",
+									"src": "/home/sxvxwx/Descargas/patricio_Vs_bob.mp4"
+								},
+								{
+									"key": "course_id",
+									"value": "1",
+									"type": "default"
+								},
+								{
+									"key": "order_in_course",
+									"value": "1",
+									"type": "default"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/v1/course/video/create",
 							"host": [
 								"{{base_url}}"
 							],
@@ -1036,21 +1210,13 @@
 								"v1",
 								"course",
 								"video",
-								"list"
+								"create"
 							]
 						}
 					},
-					"response": []
-				},
-				{
-					"name": "Video - Create",
-					"request": {
-						"method": "GET",
-						"header": []
-					},
 					"response": [
 						{
-							"name": "Video - create",
+							"name": "Video - Create",
 							"originalRequest": {
 								"method": "POST",
 								"header": [],
@@ -1063,25 +1229,26 @@
 											"src": "/home/sxvxwx/Descargas/patricio_Vs_bob.mp4"
 										},
 										{
-											"key": "course_id",
-											"value": "1",
-											"type": "default"
-										},
-										{
 											"key": "order_in_course",
 											"value": "1",
 											"type": "default"
 										}
-									]
+									],
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
 								},
 								"url": {
-									"raw": "{{base_url}}/v1/course/video/create",
+									"raw": "{{base_url}}/v1/course/2/video/create",
 									"host": [
 										"{{base_url}}"
 									],
 									"path": [
 										"v1",
 										"course",
+										"2",
 										"video",
 										"create"
 									]
@@ -1105,15 +1272,15 @@
 								},
 								{
 									"key": "Content-Length",
-									"value": "436"
+									"value": "443"
 								},
 								{
 									"key": "ETag",
-									"value": "W/\"1b4-LlA+/hCUeKWMjQFwhrYvOOBJC6E\""
+									"value": "W/\"1bb-yhv7VkDzAvpHW1R4xFvA6iN7d1g\""
 								},
 								{
 									"key": "Date",
-									"value": "Sun, 13 Nov 2022 07:12:00 GMT"
+									"value": "Sun, 13 Nov 2022 12:53:56 GMT"
 								},
 								{
 									"key": "Connection",
@@ -1125,94 +1292,7 @@
 								}
 							],
 							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"course_id\": \"1\",\n        \"order_in_course\": \"1\",\n        \"content_url\": \"https://qa-staging-frqtal.nyc3.digitaloceanspaces.com/Hackathon/video/video-2022-11-13%2001%3A11%3A56.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=IQO5HZNGKXQNPCIQB7SK%2F20221113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221113T071200Z&X-Amz-Expires=300&X-Amz-Signature=5f94a8b64cb99e56c6a3c61ab750666e225e6798bbe82f6065dc5617396726ef&X-Amz-SignedHeaders=host\"\n    }\n}"
-						}
-					]
-				},
-				{
-					"name": "Video - Update",
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": [
-						{
-							"name": "Video - create",
-							"originalRequest": {
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "formdata",
-									"formdata": [
-										{
-											"key": "video",
-											"type": "file",
-											"src": "/home/sxvxwx/Descargas/patricio_Vs_bob.mp4"
-										},
-										{
-											"key": "course_id",
-											"value": "1",
-											"type": "default"
-										},
-										{
-											"key": "order_in_course",
-											"value": "1",
-											"type": "default"
-										}
-									]
-								},
-								"url": {
-									"raw": "{{base_url}}/v1/course/video/create",
-									"host": [
-										"{{base_url}}"
-									],
-									"path": [
-										"v1",
-										"course",
-										"video",
-										"create"
-									]
-								}
-							},
-							"status": "OK",
-							"code": 200,
-							"_postman_previewlanguage": "json",
-							"header": [
-								{
-									"key": "X-Powered-By",
-									"value": "Express"
-								},
-								{
-									"key": "Access-Control-Allow-Origin",
-									"value": "*"
-								},
-								{
-									"key": "Content-Type",
-									"value": "application/json; charset=utf-8"
-								},
-								{
-									"key": "Content-Length",
-									"value": "436"
-								},
-								{
-									"key": "ETag",
-									"value": "W/\"1b4-LlA+/hCUeKWMjQFwhrYvOOBJC6E\""
-								},
-								{
-									"key": "Date",
-									"value": "Sun, 13 Nov 2022 07:12:00 GMT"
-								},
-								{
-									"key": "Connection",
-									"value": "keep-alive"
-								},
-								{
-									"key": "Keep-Alive",
-									"value": "timeout=5"
-								}
-							],
-							"cookie": [],
-							"body": "{\n    \"data\": {\n        \"course_id\": \"1\",\n        \"order_in_course\": \"1\",\n        \"content_url\": \"https://qa-staging-frqtal.nyc3.digitaloceanspaces.com/Hackathon/video/video-2022-11-13%2001%3A11%3A56.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=IQO5HZNGKXQNPCIQB7SK%2F20221113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221113T071200Z&X-Amz-Expires=300&X-Amz-Signature=5f94a8b64cb99e56c6a3c61ab750666e225e6798bbe82f6065dc5617396726ef&X-Amz-SignedHeaders=host\"\n    }\n}"
+							"body": "{\n    \"data\": {\n        \"id\": 9,\n        \"course_id\": \"2\",\n        \"order_in_course\": \"1\",\n        \"content_url\": \"https://qa-staging-frqtal.nyc3.digitaloceanspaces.com/Hackathon/video/video-2022-11-13%2006%3A53%3A53.mp4?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=IQO5HZNGKXQNPCIQB7SK%2F20221113%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221113T125356Z&X-Amz-Expires=300&X-Amz-Signature=44dbdbfda5808d02a6fd2262b59bbca18aac9f4b0f7f57acf1c4737be831f736&X-Amz-SignedHeaders=host\"\n    }\n}"
 						}
 					]
 				}

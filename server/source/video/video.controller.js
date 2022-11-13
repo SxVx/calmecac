@@ -5,11 +5,12 @@ const { s3upload, s3getUrl } = require('../../utils/third-parties/awsS3');
 const { fullCurrentDate } = require('../../utils/date');
 
 class VideoController {
-  static list = async (req, res, next) => {
+  static list = async ({ params: { course_id } }, res, next) => {
     try {
-      const course_id = parseInt(req.originalUrl.split('/')[3]);
-      console.log(req.params);
-      const videos = await Video.findAll({ where: { course_id } });
+      const videos = await Video.findAll({
+        where: { course_id },
+        order: [['order_in_course', 'ASC']],
+      });
       const data = await Promise.all(videos.map(this.#transform));
       return res.status(HTTP_CODE.OK).json({ data });
     } catch (error) {
@@ -17,11 +18,11 @@ class VideoController {
     }
   };
 
-  static create = async ({ body, files }, res, next) => {
+  static create = async ({ body, files, params: { course_id } }, res, next) => {
     try {
       const filesStore = await this.#validateFile(files);
       let video = await Video.create({
-        course_id: body.course_id,
+        course_id: course_id,
         order_in_course: body.order_in_course,
         content_url: filesStore['video']?.path,
       });
