@@ -8,6 +8,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { LogBox } from 'react-native';
 import AppProviders from './app-providers';
 
+import SplashScreen from 'react-native-splash-screen';
+
 import '@core/config/shim';
 
 if (__DEV__) {
@@ -18,6 +20,12 @@ if (__DEV__) {
 }
 
 const App = () => {
+  React.useEffect(() => {
+    setTimeout(() => {
+      SplashScreen.hide();
+    }, 200);
+  }, []);
+
   return (
     <AppProviders>
       <NavigationContainer

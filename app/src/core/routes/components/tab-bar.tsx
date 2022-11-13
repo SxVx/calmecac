@@ -88,11 +88,17 @@ const shadow = {
   shadowOpacity: 0.48,
   shadowRadius: 11.95,
 
-  elevation: 1,
+  elevation: 12,
 };
 
 const Container = styled.View`
   flex-direction: row;
   min-height: 60px;
+  position: absolute;
+  bottom: 16px;
+  align-self: center;
+  background-color: red;
+  border-radius: 16px;
+  width: 90%;
   ${shadow}
 `;

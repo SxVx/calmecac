@@ -18,10 +18,14 @@ declare module '*.svg' {
   const content: React.FC<SvgProps>;
   export default content;
 }
-declare module '*.jpg';
+declare module '*.jpg' {
+  const value: any;
+  export = value;
+}
 declare module '*.pdf';
 declare module '*.jpge';
 declare module '*.gif';
+declare module '*.mp4';
 declare module 'styled-components' {
   export interface DefaultTheme extends Theme {}
 }

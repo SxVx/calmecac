@@ -16,6 +16,7 @@ import MetamaskIcon from '@core/assets/images/icons/metamask.svg';
 
 import { useFocusEffect } from '@react-navigation/native';
 import theme from '@core/theme';
+import Video from 'react-native-video';
 
 const Login = ({ navigation: { setOptions } }) => {
   const connection = useWalletConnect();
@@ -44,7 +45,7 @@ const Login = ({ navigation: { setOptions } }) => {
 
   return (
     <>
-      <StatusBar translucent backgroundColor={theme.colors.primary} />
+      <StatusBar translucent backgroundColor="transparent" />
 
       <Container>
         <Typography>Welcome to Calmecac</Typography>

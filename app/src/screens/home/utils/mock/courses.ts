@@ -10,6 +10,7 @@ const courses = {
     rating: faker.datatype.number({ min: 1, max: 5 }),
     totalRating: faker.datatype.number({ min: 1, max: 100 }),
     teacher: faker.name.fullName(),
+    category: faker.lorem.words(1),
   })),
 };
 
