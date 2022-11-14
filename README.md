@@ -36,6 +36,11 @@ We learned about `Blockchain`, `Smart Contracts`, `Hardhat`, `Avalanche`, `ORM S
 - Storage on IPFS
 - Implement: Tech courses, Design courses and languages courses
 - Active notification to the users with push protocol
+- Content creator view
+- Select color palette for UI/UX
+- Standardized spaces
+- Define base components
+- Define navigation flows
 
 ## Intructions to run the projects
 
