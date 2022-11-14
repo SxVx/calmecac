@@ -41,6 +41,7 @@ We learned about `Blockchain`, `Smart Contracts`, `Hardhat`, `Avalanche`, `ORM S
 - Standardized spaces
 - Define base components
 - Define navigation flows
+- Configure usage for iOS
 
 ## Intructions to run the projects
 
