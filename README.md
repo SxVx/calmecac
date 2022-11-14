@@ -44,7 +44,7 @@ We learned about `Blockchain`, `Smart Contracts`, `Hardhat`, `Avalanche`, `ORM S
 
 ## Intructions to run the projects
 
-- FrontEnd
+- Frontend:
 ```bash
 
 cd app && yarn/npm && yarn/npm android
@@ -52,7 +52,7 @@ cd app && yarn/npm && yarn/npm android
 By using the sequence of commands aboves, the project for android will be bundled and ready to work on.
 
 ```
-- BackEnd:
+- Backend:
 ```bash
 
 cd server
