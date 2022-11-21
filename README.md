@@ -48,9 +48,12 @@ We learned about `Blockchain`, `Smart Contracts`, `Hardhat`, `Avalanche`, `ORM S
 - Frontend:
 ```bash
 
-cd app && yarn/npm && yarn/npm android
+- cd app -> Location of the app itself 
+- yarn/npm i -> Install dependencies
+- yarn/npm run android/ios -> Bundle for android or IOS
+  yarn/npm run start -> Kick off the app for the platform previously specified.
 
-By using the sequence of commands aboves, the project for android will be bundled and ready to work on.
+By using the sequence of commands above, the project for android will be bundled and ready to work on.
 
 ```
 - Backend:
