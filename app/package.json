@@ -8,7 +8,8 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "postinstall": "yarn patch-package && yarn rn-nodeify --install --hack &&  yarn jetifier"
+    "postinstall": "yarn patch-package && yarn rn-nodeify --install --hack &&  yarn jetifier",
+    "storybook": "yarn start-storybook -p 7007"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.17.11",
@@ -104,6 +105,14 @@
     "@babel/runtime": "^7.12.5",
     "@faker-js/faker": "^7.6.0",
     "@react-native-community/eslint-config": "^2.0.0",
+    "@storybook/addon-actions": "^5.3",
+    "@storybook/addon-docs": "^6.5.13",
+    "@storybook/addon-knobs": "^5.3",
+    "@storybook/addon-links": "^5.3",
+    "@storybook/addon-ondevice-actions": "^5.3.23",
+    "@storybook/addon-ondevice-knobs": "^5.3.26",
+    "@storybook/react-native": "^5.3.27",
+    "@storybook/react-native-server": "^5.3.23",
     "@tsconfig/react-native": "^2.0.2",
     "@types/jest": "^26.0.23",
     "@types/react": "^18.0.21",
@@ -114,6 +123,7 @@
     "@typescript-eslint/eslint-plugin": "^5.37.0",
     "@typescript-eslint/parser": "^5.37.0",
     "babel-jest": "^26.6.3",
+    "babel-loader": "^8.3.0",
     "babel-plugin-module-resolver": "^4.1.0",
     "eslint": "^8.27.0",
     "eslint-config-airbnb": "^19.0.4",
@@ -122,6 +132,7 @@
     "metro-react-native-babel-preset": "0.72.3",
     "patch-package": "^6.5.0",
     "prettier": "^2.7.1",
+    "react-dom": "18.1.0",
     "react-test-renderer": "18.1.0",
     "reactotron-react-native": "^5.0.3",
     "typescript": "^4.8.3"
@@ -142,7 +153,7 @@
   },
   "browser": {
     "stream": "stream-browserify",
-    "crypto": "react-native-crypto",
+    "crypto": true,
     "path": "path-browserify",
     "zlib": "browserify-zlib",
     "console": "console-browserify",
